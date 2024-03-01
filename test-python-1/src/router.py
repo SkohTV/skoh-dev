@@ -54,16 +54,21 @@ def router(req: Request) -> str:
 
 def handle_request(client_socket):
   '''Takes a request, then send a response'''
-  # Receive request
-  request_data = client_socket.recv(1024).decode('utf-8').strip()
-  main_logger.info(f"Received data: {request_data}")
+  try:
+    # Receive request
+    request_data = client_socket.recv(1024).decode('utf-8').strip()
+    main_logger.info(f"Received data: {request_data}")
 
-  method, path, _ = request_data.split('\n')[0].split(' ')
-  main_logger.warn(f"Request received: path='{path}' with method='{method}'")
+    method, path, _ = request_data.split('\n')[0].split(' ')
+    main_logger.warn(f"Request received: path='{path}' with method='{method}'")
 
-  req = Request(method=method, path=path)
-  res = router(req)
+    req = Request(method=method, path=path)
+    res = router(req)
 
-  # Send the response back to the client
-  client_socket.sendall(res.encode('utf-8'))
+    # Send the response back to the client
+    client_socket.sendall(res.encode('utf-8'))
+
+  # Avoid crashing, log error
+  except Exception as e:
+    main_logger.critical(f"Request failed: {e}")
 
