@@ -1,11 +1,12 @@
 import socket
+import ssl
 from src import logger
 from src.logger import main_logger
 from src import router
 
 
-HOST = '127.0.0.1'
-PORT = 8080
+HOST = '0.0.0.0'
+PORT = 443
 
 
 def main():
@@ -17,14 +18,19 @@ def main():
     server_socket.bind((HOST, PORT))
     server_socket.listen()
 
+    # SSL certificate
+    context = ssl.create_default_context(ssl.Purpose.CLIENT_AUTH)
+    context.load_cert_chain(certfile="cert.pem", keyfile="key.pem")
+
     main_logger.warning(f"Serving on {HOST}:{PORT}")
 
     # Main loop to handle requests
-    while True:
-      client_socket, addr = server_socket.accept()
-      with client_socket:
-        main_logger.info(f"Connected by {addr}")
-        router.handle_request(client_socket)
+    with context.wrap_socket(server_socket, server_side=True) as ssl_server_socket:
+      while True:
+        client_socket, addr = ssl_server_socket.accept()
+        with client_socket:
+          main_logger.info(f"Connected by {addr}")
+          router.handle_request(client_socket)
 
 
 if __name__ == '__main__':
