@@ -2,5 +2,5 @@ _venv/
 __pycache__/
 
 # Do not save any files in logs, EXCEPT .gitkeep
-logs/*
-!logs/.gitkeep
+test-python-1/logs/*
+!test-python-1/logs/.gitkeep
