@@ -1,1 +1,1 @@
-{"level": "WARNING", "message": "Serving on 127.0.0.1:8080", "timestamp": "2024-03-01T17:34:58.046261+00:00", "logger": "main_logger", "module": "main", "function": "main", "line": 20, "thread_name": "MainThread"}
+{"level": "WARNING", "message": "Serving on 127.0.0.1:8080", "timestamp": "2024-03-01T17:39:42.660998+00:00", "logger": "main_logger", "module": "main", "function": "main", "line": 20, "thread_name": "MainThread"}
