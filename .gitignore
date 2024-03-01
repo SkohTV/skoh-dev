@@ -1,3 +1,6 @@
 _venv/
-logs/
 __pycache__/
+
+# Do not save any files in logs, EXCEPT .gitkeep
+logs/*
+!logs/.gitkeep
