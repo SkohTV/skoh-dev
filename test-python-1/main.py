@@ -20,7 +20,8 @@ def main():
 
     # SSL certificate
     context = ssl.create_default_context(ssl.Purpose.CLIENT_AUTH)
-    context.load_cert_chain(certfile="cert.pem", keyfile="key.pem")
+    context.load_cert_chain(certfile="domain.cert.pem", keyfile="private.key.pem")
+    context.load_verify_locations(cafile="intermediate.cert.pem")
 
     main_logger.warning(f"Serving on {HOST}:{PORT}")
 
