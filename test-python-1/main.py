@@ -20,18 +20,21 @@ def main():
 
     # SSL certificate
     context = ssl.create_default_context(ssl.Purpose.CLIENT_AUTH)
-    context.load_cert_chain(certfile="domain.cert.pem", keyfile="private.key.pem")
-    context.load_verify_locations(cafile="intermediate.cert.pem")
+    context.load_cert_chain(certfile="keys/domain.cert.pem", keyfile="keys/private.key.pem")
+    context.load_verify_locations(cafile="keys/intermediate.cert.pem")
 
     main_logger.warning(f"Serving on {HOST}:{PORT}")
 
     # Main loop to handle requests
     with context.wrap_socket(server_socket, server_side=True) as ssl_server_socket:
       while True:
-        client_socket, addr = ssl_server_socket.accept()
-        with client_socket:
-          main_logger.info(f"Connected by {addr}")
-          router.handle_request(client_socket)
+        try:
+          client_socket, addr = ssl_server_socket.accept()
+          with client_socket:
+            main_logger.info(f"Connected by {addr}")
+            router.handle_request(client_socket)
+        except Exception as e:
+          main_logger.critical(f"Failed to process request: {e}")
 
 
 if __name__ == '__main__':
