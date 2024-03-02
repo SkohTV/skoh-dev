@@ -7,6 +7,7 @@ from src import router
 
 HOST = '0.0.0.0'
 PORT = 443
+DOMAIN = 'ae.skoh.dev'
 
 
 def main():
@@ -32,7 +33,7 @@ def main():
           client_socket, addr = ssl_server_socket.accept()
           with client_socket:
             main_logger.info(f"Connected by {addr}")
-            router.handle_request(client_socket)
+            router.handle_request(DOMAIN, client_socket)
         except Exception as e:
           main_logger.critical(f"Failed to process request: {e}")
 

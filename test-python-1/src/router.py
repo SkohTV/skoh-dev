@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+from ssl import SSLSocket
 from .logger import main_logger
 
 
@@ -52,13 +53,22 @@ def router(req: Request) -> str:
   return res
 
 
-def handle_request(client_socket):
+def handle_request(domain: str, client_socket: SSLSocket) -> None:
   '''Takes a request, then send a response'''
   try:
     # Receive request
     request_data = client_socket.recv(1024).decode('utf-8').strip()
     main_logger.info(f"Received data: {request_data}")
 
+    # Check domain
+    host_header = None
+    for line in request_data.split('\r\n'):
+      if line.startswith('Host:'):
+        host_header = line.split(' ')[1].strip()
+    if not host_header == domain:
+      return # If not domain, then drop request
+
+    # Extract method / path
     method, path, _ = request_data.split('\n')[0].split(' ')
     main_logger.warn(f"Request received: path='{path}' with method='{method}'")
 

@@ -7,7 +7,7 @@ import datetime as dt
 main_logger = logging.getLogger("main_logger")
 
 
-def setup_logging():
+def setup_logging() -> None:
   '''Load custom logging config (logger.json)'''
   with open('logger.json') as f:
     config = json.load(f)
@@ -23,10 +23,12 @@ class CustomJSON(logging.Formatter):
 
   @override
   def format(self, record: logging.LogRecord) -> str:
+    '''Format log record before logging it'''
     message = self._prepare_log_dict(record)
     return json.dumps(message, default=str)
 
-  def _prepare_log_dict(self, record: logging.LogRecord):
+  def _prepare_log_dict(self, record: logging.LogRecord) -> dict[str, str]:
+    '''Convert log message to dict[str, str] (for json format)'''
     always_fields = {
       "message": record.getMessage(),
       "timestamp": dt.datetime.fromtimestamp(record.created, tz=dt.timezone.utc).isoformat(),
@@ -38,7 +40,7 @@ class CustomJSON(logging.Formatter):
     if record.stack_info is not None:
       always_fields["stack_info"] = self.formatStack(record.stack_info)
 
-    # Went too far, mCoding
+    # Went too far in pythonista, mCoding
     message = {
       key: msg_val
       if (msg_val := always_fields.pop(val, None)) is not None
