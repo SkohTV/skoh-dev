@@ -46,7 +46,7 @@ def router(req: Request) -> str:
     else:
       res = Response(path='404.html', code=404, msg='Not Found')
   else:
-    res = Response(path='404.html', code=404, msg='Not Found')
+    res = Response(path='404.html', code=501, msg='Not Implemented')
 
   # Build reponse
   res = f'HTTP/1.1 {res.code} {res.msg}\r\nContent-Length: {res.len()}\r\n\r\n{res.get_body().decode("utf-8")}'
