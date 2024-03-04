@@ -1,6 +1,6 @@
 import logging.config
 import json
-from typing import override
+#from typing import override
 import datetime as dt
 
 # Custom logger, to avoid using root logger
@@ -21,7 +21,7 @@ class CustomJSON(logging.Formatter):
     super().__init__()
     self.fmt_keys = fmt_keys if fmt_keys is not None else {}
 
-  @override
+#  @override
   def format(self, record: logging.LogRecord) -> str:
     '''Format log record before logging it'''
     message = self._prepare_log_dict(record)
