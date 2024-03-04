@@ -1,3 +1,9 @@
 #!/usr/bin/env bash
 
-nohup nix develop --command python main.py > output.log 2>&1 &
+PID=$(lsof -t -i:443)
+
+if [ -n "$PID" ]; then
+  kill -9 $PID
+fi
+
+nix develop --command python main.py &> output.log
