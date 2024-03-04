@@ -1,3 +1,3 @@
-!function(){
-  document.getElementById('js-test').textContent = 'JS is working !';
-}
+window.onload = () => {                                                                                                                                                                                           │
+  document.getElementById('js-test').textContent = 'JS is working !';                                                                                                                                             │
+}                                                                                                                                                                                                                 │
