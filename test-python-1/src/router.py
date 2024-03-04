@@ -41,8 +41,8 @@ def router(req: Request) -> str:
       res = Response(path='index.html', code=200, msg='OK')
     elif req.path == '/ressource/style.css':
       res = Response(path='style.css', code=200, msg='OK')
-    elif req.path == '/ressource/script.js':
-      res = Response(path='script.js', code=200, msg='OK')
+    elif req.path == '/ressource/main.js':
+      res = Response(path='main.js', code=200, msg='OK')
     else:
       res = Response(path='404.html', code=404, msg='Not Found')
   else:
