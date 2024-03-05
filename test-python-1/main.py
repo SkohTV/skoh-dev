@@ -6,10 +6,31 @@ from src import router
 
 
 HOST = '0.0.0.0'
-PORT = 443
+PORT = 8000
 
 
-def main():
+def http():
+  '''HTTP web server'''
+  # Load the logging config
+  logger.setup_logging()
+
+  # Create the socket
+  with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server_socket:
+    server_socket.bind((HOST, PORT))
+    server_socket.listen()
+
+    main_logger.warning(f"Serving on {HOST}:{PORT}")
+
+    # Main loop to handle requests
+    while True:
+      client_socket, addr = server_socket.accept()
+      with client_socket:
+        main_logger.info(f"Connected by {addr}")
+        router.handle_request(client_socket)
+
+
+def https():
+  '''HTTPS web server'''
   # Load the logging config
   logger.setup_logging()
 
@@ -38,5 +59,5 @@ def main():
 
 
 if __name__ == '__main__':
-  main()
+  http()
 

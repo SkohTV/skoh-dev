@@ -14,7 +14,7 @@
 
   .carousel  {
     display: flex;
-    height: 250px;
+    height: 25%;
 
     &:nth-child(odd) {
       animation: scroll_right 60s linear infinite;
@@ -28,7 +28,7 @@
       aspect-ratio: 3/4;
       background-size: cover;
       background-position: center;
-      background-image: url('/ae/api/random-crab');
+      /* background-image: url('/ae/api/random-crab/2'); */
     }
 
   }
