@@ -56,6 +56,8 @@ def router(req: Request) -> str|bytes:
       res = Response(path='ae/script.js', code=200, msg='OK')
     elif req.path == '/ae/ressource/style.css':
       res = Response(path='ae/style.css', code=200, msg='OK')
+    elif req.path == '/ae/ressource/crab_tr':
+      res = Response(path='ae/imgs/crab_tr.png', code=200, msg='OK', format='png')
     elif req.path.startswith('/ae/api/random-crab/'):
       id = req.path[len('/ae/api/random-crab/'):]
       res = Response(path=f'ae/imgs/crab_pic/{id}.jpg', code=200, msg='OK', format='jpg')
@@ -69,6 +71,8 @@ def router(req: Request) -> str|bytes:
   # Build reponse
   if res.format == 'text':
     res = f'HTTP/1.1 {res.code} {res.msg}\r\nContent-Length: {res.len()}\r\n\r\n{res.get_body().decode('utf-8')}'
+  elif res.format == 'png':
+    res = f'HTTP/1.1 {res.code} {res.msg}\r\nContent-Type: image/png\r\nContent-Length: {res.len()}\r\n\r\n'.encode('utf-8') + res.get_body()
   elif res.format == 'jpg':
     res = f'HTTP/1.1 {res.code} {res.msg}\r\nContent-Type: image/jpeg\r\nContent-Length: {res.len()}\r\n\r\n'.encode('utf-8') + res.get_body()
   else:

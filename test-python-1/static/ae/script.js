@@ -1,5 +1,4 @@
 window.onload = () => {
-  document.getElementById('js-test').textContent = 'JS is working !';
 
   const arr = document.getElementsByClassName('img-background')
   for (let x of arr) {
