@@ -32,6 +32,8 @@
               (python.withPackages (ps: with ps; [
                 virtualenv # Virtualenv
                 pip # The pip installer
+
+                pillow
               ]))
             ];
           };
