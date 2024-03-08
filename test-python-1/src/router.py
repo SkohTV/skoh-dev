@@ -57,8 +57,8 @@ def router(req: Request) -> bytes:
       res = Response(path='ae/script.js', format='text/javascript')
     elif req.path == '/ae/ressource/crab_tr':
       res = Response(path='ae/imgs/crab_tr.webp', format='image/webp')
-    elif req.path.startswith('/ae/api/random-crab/'):
-      id = req.path[len('/ae/api/random-crab/'):]
+    elif req.path.startswith('/ae/api/crab/'):
+      id = req.path[len('/ae/api/crab/'):]
       res = Response(path=f'ae/imgs/crab_pic/{id}.jpg', format='image/jpeg')
 
     # Errors
