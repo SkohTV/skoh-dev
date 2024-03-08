@@ -23,11 +23,13 @@
         default =
           let
             # Use Python 3.11
-            python = pkgs.python312;
+            python = pkgs.python311;
           in
           pkgs.mkShell {
             # The Nix packages provided in the environment
             packages = [
+              pkgs.lsof
+
               # Python plus helper tools
               (python.withPackages (ps: with ps; [
                 virtualenv # Virtualenv

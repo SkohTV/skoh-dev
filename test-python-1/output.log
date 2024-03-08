@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/home/qlpth/dev/repo/skoh-dev/test-python-1/main.py", line 1, in <module>
+    from src import server
+  File "/home/qlpth/dev/repo/skoh-dev/test-python-1/src/server.py", line 4, in <module>
+    from src import logger
+  File "/home/qlpth/dev/repo/skoh-dev/test-python-1/src/logger.py", line 3, in <module>
+    from typing import override
+ImportError: cannot import name 'override' from 'typing' (/nix/store/sxr2igfkwhxbagri49b8krmcqz168sim-python3-3.11.8/lib/python3.11/typing.py)

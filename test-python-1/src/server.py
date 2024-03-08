@@ -6,10 +6,6 @@ from src.logger import main_logger
 from src import router
 
 
-HOST = '0.0.0.0'
-PORT = 8000
-
-
 def handle(client_socket: socket.socket|ssl.SSLSocket, addr) -> None:
   '''Handle the request, used by multithreading'''
   with client_socket:
@@ -17,8 +13,11 @@ def handle(client_socket: socket.socket|ssl.SSLSocket, addr) -> None:
     router.handle_request(client_socket)
 
 
-def http():
+def http() -> None:
   '''HTTP web server'''
+  HOST = '0.0.0.0'
+  PORT = 8000
+
   # Load the logging config
   logger.setup_logging()
 
@@ -35,8 +34,11 @@ def http():
       threading.Thread(target=handle, args=(client_socket, addr)).start()
 
 
-def https():
+def https() -> None:
   '''HTTPS web server'''
+  HOST = '0.0.0.0'
+  PORT = 443
+
   # Load the logging config
   logger.setup_logging()
 
