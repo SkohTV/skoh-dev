@@ -10,7 +10,7 @@ HOST = '0.0.0.0'
 PORT = 8000
 
 
-def handle(client_socket: socket.socket|ssl.SSLSocket, addr: socket._RetAddress) -> None:
+def handle(client_socket: socket.socket|ssl.SSLSocket, addr) -> None:
   '''Handle the request, used by multithreading'''
   with client_socket:
     main_logger.info(f"Connected by {addr}")

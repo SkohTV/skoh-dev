@@ -2,7 +2,6 @@ from dataclasses import dataclass
 from ssl import SSLSocket
 from .logger import main_logger
 from socket import socket
-from random import randint
 
 
 # Classes to handle data more easly
@@ -70,7 +69,7 @@ def router(req: Request) -> str|bytes:
 
   # Build reponse
   if res.format == 'text':
-    res = f'HTTP/1.1 {res.code} {res.msg}\r\nContent-Length: {res.len()}\r\n\r\n{res.get_body().decode('utf-8')}'
+    res = f'HTTP/1.1 {res.code} {res.msg}\r\nContent-Length: {res.len()}\r\n\r\n{res.get_body().decode("utf-8")}'
   elif res.format == 'png':
     res = f'HTTP/1.1 {res.code} {res.msg}\r\nContent-Type: image/png\r\nContent-Length: {res.len()}\r\n\r\n'.encode('utf-8') + res.get_body()
   elif res.format == 'jpg':
