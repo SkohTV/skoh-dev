@@ -49,17 +49,44 @@ def router(req: Request) -> bytes:
       res = Response(path='main.js', format='text/javascript')
 
     # AE
-    elif req.path == '/ae':
+    elif req.path == '/ae': # html
       res = Response(path='ae/index.html')
-    elif req.path == '/ae/ressource/style.css':
+    elif req.path == '/ae/r/style.css': # css
       res = Response(path='ae/style.css', format='text/css')
-    elif req.path == '/ae/ressource/script.js':
+    elif req.path == '/ae/r/script.js': # javascript
       res = Response(path='ae/script.js', format='text/javascript')
-    elif req.path == '/ae/ressource/crab_tr':
-      res = Response(path='ae/imgs/crab_tr.webp', format='image/webp')
-    elif req.path.startswith('/ae/api/crab/'):
-      id = req.path[len('/ae/api/crab/'):]
-      res = Response(path=f'ae/imgs/crab_pic/{id}.jpg', format='image/jpeg')
+    elif req.path == '/ae/r/crab_big': # big crab
+      res = Response(path='ae/imgs/crab_big.webp', format='image/webp')
+
+    elif req.path.startswith('/ae/i/crab/'):# crab pictures
+      id = req.path[len('/ae/i/crab/'):]
+      if id.isnumeric() and 1 <= int(id) <= 78:
+        res = Response(path=f'ae/imgs/crab_pic/{id}.jpg', format='image/jpeg')
+      else:
+        res = Response(path='404.html', code=404, msg='Not Found')
+
+    elif req.path.startswith('/ae/i/hazbin/'): # hazbin characters
+      NAMES = ['alastor', 'angel', 'emily', 'husk', 'lucifer', 'pentious']
+      chara = req.path[len('/ae/i/hazbin/'):]
+      if chara in NAMES:
+        res = Response(path=f'ae/imgs/{chara}.webp', format='image/webp')
+      else:
+        res = Response(path='404.html', code=404, msg='Not Found')
+
+    elif req.path.startswith('/ae/s/hazbin/'): # hazbin song
+      NAMES = {
+        'dad': 'Hell\'s Greatest Dad',
+        'sorry': 'It Starts With Sorry',
+        'loser': 'Loser, Baby',
+        'poison': 'Poison',
+        'gone': 'Stayed Gone',
+        'know': 'You Didn\'t Know',
+      }
+      song = req.path[len('/ae/s/hazbin/'):]
+      if song in NAMES.keys():
+        res = Response(path=f'ae/music/{NAMES[song]}.mp3', format='audio/mp3')
+      else:
+        res = Response(path='404.html', code=404, msg='Not Found')
 
     # Errors
     else:
