@@ -7,3 +7,8 @@ window.onload = () => {
   }
 
 }
+
+function playsound(number){
+  let item = document.getElementById(`music${number}`);
+  item.paused ? item.play() : item.pause();
+}

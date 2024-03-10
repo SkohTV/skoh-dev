@@ -55,7 +55,7 @@ def router(req: Request) -> bytes:
       res = Response(path='ae/style.css', format='text/css')
     elif req.path == '/ae/r/script.js': # javascript
       res = Response(path='ae/script.js', format='text/javascript')
-    elif req.path == '/ae/r/crab_big': # big crab
+    elif req.path == '/ae/i/crab_big': # big crab
       res = Response(path='ae/imgs/crab_big.webp', format='image/webp')
 
     elif req.path.startswith('/ae/i/crab/'):# crab pictures
