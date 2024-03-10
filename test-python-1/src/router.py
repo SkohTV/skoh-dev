@@ -19,6 +19,7 @@ class Response:
   code: int = 200
   msg: str = 'OK'
   format: str = 'text/html'
+  cache: bool = False
   _body: bytes|None = None
 
   def len(self) -> int:
@@ -31,6 +32,11 @@ class Response:
       with open(f'static/{self.path}', 'rb') as f:
         self._body = f.read()
     return self._body
+
+  def get_cache(self) -> str:
+    '''Set 1 year of cache if cache enabled'''
+    return 'Cache-Control: max-age=31536000\r\n' if self.cache else ''
+
 
 
 # Methods to handle requests
@@ -95,7 +101,7 @@ def router(req: Request) -> bytes:
     res = Response(path='404.html', code=501, msg='Not Implemented')
 
   # Build reponse
-  res = f'HTTP/1.1 {res.code} {res.msg}\r\nContent-Type: {res.format}\r\nContent-Length: {res.len()}\r\n\r\n'.encode('utf-8') + res.get_body()
+  res = f'HTTP/1.1 {res.code} {res.msg}\r\nContent-Type: {res.format}\r\n{res.get_cache()}Content-Length: {res.len()}\r\n\r\n'.encode('utf-8') + res.get_body()
 
   return res
 
