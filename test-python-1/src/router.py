@@ -62,12 +62,12 @@ def router(req: Request) -> bytes:
     elif req.path == '/ae/r/script.js': # javascript
       res = Response(path='ae/script.js', format='text/javascript')
     elif req.path == '/ae/i/crab_big': # big crab
-      res = Response(path='ae/imgs/crab_big.webp', format='image/webp')
+      res = Response(path='ae/imgs/crab_big.webp', format='image/webp', cache=True)
 
     elif req.path.startswith('/ae/i/crab/'):# crab pictures
       id = req.path[len('/ae/i/crab/'):]
       if id.isnumeric() and 1 <= int(id) <= 78:
-        res = Response(path=f'ae/imgs/crab_pic/{id}.jpg', format='image/jpeg')
+        res = Response(path=f'ae/imgs/crab_pic/{id}.jpg', format='image/jpeg', cache=True)
       else:
         res = Response(path='404.html', code=404, msg='Not Found')
 
@@ -75,7 +75,7 @@ def router(req: Request) -> bytes:
       NAMES = ['alastor', 'angel', 'emily', 'husk', 'lucifer', 'pentious']
       chara = req.path[len('/ae/i/hazbin/'):]
       if chara in NAMES:
-        res = Response(path=f'ae/imgs/{chara}.webp', format='image/webp')
+        res = Response(path=f'ae/imgs/{chara}.webp', format='image/webp', cache=True)
       else:
         res = Response(path='404.html', code=404, msg='Not Found')
 
@@ -90,7 +90,7 @@ def router(req: Request) -> bytes:
       }
       song = req.path[len('/ae/s/hazbin/'):]
       if song in NAMES.keys():
-        res = Response(path=f'ae/music/{NAMES[song]}.mp3', format='audio/mp3')
+        res = Response(path=f'ae/music/{NAMES[song]}.mp3', format='audio/mp3', cache=True)
       else:
         res = Response(path='404.html', code=404, msg='Not Found')
 
