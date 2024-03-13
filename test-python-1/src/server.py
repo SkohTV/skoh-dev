@@ -1,6 +1,7 @@
 import socket
 import ssl
 import threading
+from time import sleep
 from src import logger
 from src.logger import main_logger
 from src import router
@@ -62,4 +63,29 @@ def https() -> None:
           threading.Thread(target=handle, args=(client_socket, addr)).start()
         except Exception as e:
           main_logger.critical(f"Failed to process request: {e}")
+
+
+def handler(do_http=False, do_https=False) -> None:
+  '''Restart threads every 12 hours'''
+  # while True:
+  threads = []
+
+  if do_http:
+    item = threading.Thread(target=http)
+    item.start()
+    threads.append(item)
+
+  if do_https:
+    item = threading.Thread(target=https)
+    item.start()
+    threads.append(item)
+
+  print('sleeping')
+  # sleep(60*60*12) # Sleep for 12h
+  sleep(60) # Sleep for 12h
+  print('done, now killing threads')
+
+  for item in threads:
+    item.join() # Terminate the thread
+  print('killing thread')
 
