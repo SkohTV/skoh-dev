@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 
-PID=$(lsof -t -i :443)
 
-if [[ -n "$PID" ]]; then
-  kill -9 "$PID"
-fi
+while true; do
+  python3 main.py &> output.log &
+  PID_PYTHON = $!
+  sleep 30
+  kill -9 "$PID_PYTHON"
+done
 
-python3 main.py &> output.log

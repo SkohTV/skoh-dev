@@ -1,6 +1,6 @@
-from src.server import handler
+from src import server
 
 
 if __name__ == '__main__':
-  handler(do_http=True, do_https=True)
+  server.https()
 
