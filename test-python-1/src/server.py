@@ -6,6 +6,8 @@ from src import logger
 from src.logger import main_logger
 from src import router
 
+is_alive = True
+
 
 def handle(client_socket: socket.socket|ssl.SSLSocket, addr) -> None:
   '''Handle the request, used by multithreading'''
@@ -30,7 +32,7 @@ def http() -> None:
     main_logger.warning(f"Serving on {HOST}:{PORT}")
 
     # Main loop to handle requests
-    while True:
+    while is_alive:
       client_socket, addr = server_socket.accept()
       threading.Thread(target=handle, args=(client_socket, addr)).start()
 
@@ -57,7 +59,7 @@ def https() -> None:
 
     # Main loop to handle requests
     with context.wrap_socket(server_socket, server_side=True) as ssl_server_socket:
-      while True:
+      while is_alive:
         try:
           client_socket, addr = ssl_server_socket.accept()
           threading.Thread(target=handle, args=(client_socket, addr)).start()
@@ -67,25 +69,21 @@ def https() -> None:
 
 def handler(do_http=False, do_https=False) -> None:
   '''Restart threads every 12 hours'''
-  # while True:
-  threads = []
+  global is_alive
 
+  # while True:
   if do_http:
-    item = threading.Thread(target=http)
-    item.start()
-    threads.append(item)
+    threading.Thread(target=http).start()
 
   if do_https:
-    item = threading.Thread(target=https)
-    item.start()
-    threads.append(item)
+    threading.Thread(target=https).start()
 
   print('sleeping')
   # sleep(60*60*12) # Sleep for 12h
   sleep(60) # Sleep for 12h
   print('done, now killing threads')
 
-  for item in threads:
-    item.join() # Terminate the thread
+  is_alive = False
+  sleep(1)
   print('killing thread')
 
