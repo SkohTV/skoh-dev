@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  apex:
+    build:
+      context: ./apex
+    ports:
+      - "5000:5000"
+  
+  blog:
+    build:
+      context: ./blog
+    ports:
+      - "5001:5001"
+  
+  nginx:
+    build:
+      context: ./nginx
+    ports:
+      - "80:80"
+    depends_on:
+      - apex
+      - blog
