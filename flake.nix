@@ -1,8 +1,6 @@
 {
-  # Flake outputs
   outputs = { self, nixpkgs }:
     let
-      # Systems supported
       allSystems = [
         "x86_64-linux" # 64-bit Intel/AMD Linux
         "aarch64-linux" # 64-bit ARM Linux
@@ -16,25 +14,34 @@
       });
     in
     {
-      # Development environment output
       devShells = forAllSystems ({ pkgs }: {
-        default =
-          let
-            # Use Python 3.11
-            python = pkgs.python311;
-          in
-          pkgs.mkShell {
-            # The Nix packages provided in the environment
-            packages = [
-              # Python plus helper tools
-              (python.withPackages (ps: with ps; [
-                virtualenv # Virtualenv
-                pip # The pip installer
-                
-                flask
-              ]))
-            ];
-          };
+
+        # skoh.dev, with python flask (trying to switch to mojo)
+        apex = pkgs.mkShell {
+          name = "apex";
+          package = [(pkgs.python312.withPackages (ps: with ps; [
+            virtualenv
+            pip
+          ]))];
+        };
+
+        # api.skoh.dev, with rust
+        api = pkgs.mkShell {
+          name = "api";
+          package = [];
+        };
+
+        # blog.skoh.dev, with hugo
+        blog = pkgs.mkShell {
+          name = "blog";
+          package = [ pkgs.hugo ];
+        };
+
+        # php.skoh.dev, with php / apache
+        php = pkgs.mkShell {
+          name = "php";
+          package = [];
+        };
       });
     };
 }
