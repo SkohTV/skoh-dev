@@ -35,7 +35,7 @@ class Handler(BaseHTTPRequestHandler):
     '''Send back the ressource linked to the URL'''
 
     # Root
-    if self.path == '':
+    if self.path == '/':
       res = Response(path='index.html')
     elif self.path == '/ressource/style.css':
       res = Response(path='style.css', format='text/css')

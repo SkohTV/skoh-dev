@@ -7,11 +7,11 @@ services:
     ports:
       - "5000:5000"
   
-  blog:
-    build:
-      context: ./blog
-    ports:
-      - "5001:5001"
+  # blog:
+  #   build:
+  #     context: ./blog
+  #   ports:
+  #     - "5001:5001"
   
   nginx:
     build:
@@ -20,4 +20,4 @@ services:
       - "443:443"
     depends_on:
       - apex
-      - blog
+      # - blog
