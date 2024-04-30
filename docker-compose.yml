@@ -13,6 +13,12 @@ services:
   #   ports:
   #     - "5001:5001"
   
+  php:
+    build:
+      context: ./php
+    ports:
+      - "5002:5002"
+  
   nginx:
     build:
       context: ./
@@ -21,3 +27,4 @@ services:
     depends_on:
       - apex
       # - blog
+      - php
