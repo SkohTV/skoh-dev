@@ -1,6 +1,6 @@
-skoh.dev -> ??? (???)
-skoh.dev/ln/ -> redirect with nginx
-api.skoh.dev -> rust (???)
-blog.skoh.dev -> static site generator (Hugo)
-php.skoh.dev -> php (apache)
+skoh.dev -> ??? (???)<br>
+skoh.dev/ln/ -> redirect with nginx<br>
+api.skoh.dev -> rust (???)<br>
+blog.skoh.dev -> static site generator (Hugo)<br>
+php.skoh.dev -> php (apache)<br>
 
