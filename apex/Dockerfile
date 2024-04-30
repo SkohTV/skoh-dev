@@ -4,10 +4,6 @@ FROM python:3.12-slim
 # Set working directory
 WORKDIR /apex
 
-# Install Flask
-COPY requirements.txt requirements.txt
-RUN pip install -r requirements.txt
-
 # Copy application code
 COPY main.py .
 COPY static/ static/
