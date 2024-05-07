@@ -1,24 +1,24 @@
 version: '3.8'
 
 services:
-  apex:
-    build:
-      context: ./apex
-    ports:
-      - "5000:5000"
-    restart: "on_failure"
+  # apex:
+  #   build:
+  #     context: ./apex
+  #   ports:
+  #     - "5000:5000"
+  #   restart: "on_failure"
   
   # blog:
   #   build:
   #     context: ./blog
   #   ports:
   #     - "5001:5001"
-  
-  php:
-    build:
-      context: ./php
-    ports:
-      - "5002:5002"
+
+  # api:
+  #   build:
+  #     context: ./api
+  #   ports:
+  #     - "5002:5002"
   
   nginx:
     build:
@@ -27,5 +27,5 @@ services:
       - "443:443"
     depends_on:
       - apex
-      # - blog
-      - php
+      - blog
+      - api
