@@ -1,11 +1,11 @@
 version: '3.8'
 
 services:
-  # apex:
-  #   build:
-  #     context: ./apex
-  #   ports:
-  #     - "5000:5000"
+  apex:
+    build:
+      context: ./apex
+    ports:
+      - "5000:5000"
   #   restart: "on_failure"
   
   # blog:
@@ -27,5 +27,5 @@ services:
       - "443:443"
     depends_on:
       - apex
-      - blog
-      - api
+      # - blog
+      # - api
