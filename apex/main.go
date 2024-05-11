@@ -43,6 +43,9 @@ func new_page(root string, path string, extension string, truepath string) Page 
 
   // Format
   switch extension {
+  case "txt":
+    my_page.format = "text/plain"
+    break
   case "html":
     my_page.format = "text/html"
     break
@@ -94,8 +97,8 @@ func read_files(root string) map[string]Page {
 
     // Convert file path to url path
     path = strings.Trim(path, "/")
-    path = strings.Trim(path, "index.html")
-    path = strings.Trim(path, ".html")
+    path = strings.TrimSuffix(path, "index.html")
+    path = strings.TrimSuffix(path, ".html")
     path = strings.Trim(path, "/")
 
     all_pages[path] = new_page(root, path, extension, truepath)
