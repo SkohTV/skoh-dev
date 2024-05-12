@@ -14,11 +14,11 @@ services:
   #   ports:
   #     - "5001:5001"
 
-  # api:
-  #   build:
-  #     context: ./api
-  #   ports:
-  #     - "5002:5002"
+  api:
+    build:
+      context: ./api
+    ports:
+      - "5002:5002"
   
   nginx:
     build:
@@ -28,4 +28,4 @@ services:
     depends_on:
       - apex
       # - blog
-      # - api
+      - api
