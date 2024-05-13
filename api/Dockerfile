@@ -1,8 +1,15 @@
-FROM rust:1.78
+FROM rust:1.78 as builder
 
 WORKDIR /api
-COPY . .
 
+COPY . .
 RUN cargo build --release
 
-CMD ["/api/target/release/api"]
+
+
+FROM debian:buster-slim
+RUN mkdir /api
+COPY --from=builder /api/target/release/api /api/bin
+
+EXPOSE 5002
+CMD ["/api/bin"]
