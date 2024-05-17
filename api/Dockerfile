@@ -7,7 +7,7 @@ RUN cargo build --release -v
 
 
 
-FROM debian:buster-slim
+FROM alpine:latest
 
 COPY --from=builder /api/target/release/api /api/bin
 

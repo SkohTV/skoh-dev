@@ -8,7 +8,7 @@ RUN go build -v -o bin
 
 
 
-FROM debian:buster-slim
+FROM alpine:latest
 
 COPY --from=builder /apex/bin /apex/bin
 COPY --from=builder /apex/static/ /apex/static

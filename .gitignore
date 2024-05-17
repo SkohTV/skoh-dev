@@ -1,4 +1,5 @@
 ssl/*.pem
+*.tar
 
 apex/apex
 
