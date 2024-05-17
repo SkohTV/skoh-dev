@@ -1,2 +1,5 @@
 ssl/*.pem
+
+apex/apex
+
 api/target/
