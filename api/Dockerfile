@@ -3,7 +3,7 @@ FROM rust:1.78 as builder
 WORKDIR /api
 COPY . .
 
-RUN cargo build --release
+RUN cargo build --release -v
 
 
 
