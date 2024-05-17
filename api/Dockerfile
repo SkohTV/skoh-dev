@@ -1,14 +1,14 @@
 FROM rust:1.78 as builder
 
 WORKDIR /api
-
 COPY . .
+
 RUN cargo build --release
 
 
 
 FROM debian:buster-slim
-RUN mkdir /api
+
 COPY --from=builder /api/target/release/api /api/bin
 
 EXPOSE 5002

@@ -11,6 +11,11 @@ import (
 ) 
 
 
+const static_folder = "/apex/static"
+const port = ":5000"
+
+
+
 type Page struct {
   path string
   code int
@@ -130,9 +135,9 @@ func handler (writer http.ResponseWriter, req *http.Request) {
 }
 
 
-var all_pages = read_files("static")
+var all_pages = read_files(static_folder)
 
 func main() {
   http.HandleFunc("/", handler)
-  log.Fatal(http.ListenAndServe(":5000", nil))
+  log.Fatal(http.ListenAndServe(port, nil))
 }
