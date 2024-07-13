@@ -1,6 +1,9 @@
+# Global
 ssl/*.pem
 *.tar
 
-apex/apex
+# Apex
+apex/node_modules/
 
+# Api
 api/target/
