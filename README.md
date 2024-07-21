@@ -12,6 +12,7 @@ scp docker-compose.yml skoh-dev.tar root@IP:~/skoh-dev/
 
 # Server
 ssh root@IP
+docker system prune -a
 docker load -i skoh-dev.tar
 docker compose up -d
 ```

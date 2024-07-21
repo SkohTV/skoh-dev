@@ -2,6 +2,7 @@ export default Skills;
 
 export const metadata = {
   title: 'Skills',
+  description: 'Wip',
 }
 
 

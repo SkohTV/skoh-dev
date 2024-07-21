@@ -2,6 +2,7 @@ export default About;
 
 export const metadata = {
   title: 'About',
+  description: 'Wip',
 }
 
 

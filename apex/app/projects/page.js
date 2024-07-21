@@ -2,6 +2,7 @@ export default Projects;
 
 export const metadata = {
   title: 'Projects',
+  description: 'Wip',
 }
 
 function Projects() {

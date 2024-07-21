@@ -11,8 +11,8 @@ RUN cargo build --release -v
 # Release stage
 FROM debian:12-slim as release
 
-WORKDIR /apex
+WORKDIR /api
 COPY --from=builder /api/target/release/api /api/bin
 
-EXPOSE 5002
+EXPOSE 5001
 ENTRYPOINT ["/api/bin"]

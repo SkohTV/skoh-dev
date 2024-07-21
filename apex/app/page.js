@@ -2,6 +2,7 @@ export default Home;
 
 export const metadata = {
   title: 'Home',
+  description: 'Wip',
 }
 
 
