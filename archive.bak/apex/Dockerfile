@@ -9,7 +9,7 @@ RUN go build -v -o /apex/bin
 
 
 # Release stage
-FROM debian:12-slim as release
+FROM debian:12-slim AS release
 
 WORKDIR /apex
 COPY --from=builder /apex/bin /apex/bin
