@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-cd ~/skoh-dev
+cd /home/debian/skoh-dev
 git fetch
 
 
