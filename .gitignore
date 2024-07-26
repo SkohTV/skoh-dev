@@ -4,6 +4,7 @@ ssl/*.pem
 
 # Apex
 apex/node_modules/
+apex/.next/
 
 # Api
 api/target/
