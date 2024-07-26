@@ -11,7 +11,7 @@ export default Header;
 function Header() {
   return (
     <header className="font-bold flex justify-center content-center border-b border-zinc-700/75 border-solid">
-      <div className="sm:absolute sm:left-0 sm:top-0 m-2 h-fit w-fit rounded-full border-2 border-purple-700 bg-zinc-900">
+      <div className="sm:absolute sm:left-0 sm:top-0 m-2 h-12 w-12 rounded-full border-2 border-purple-700 bg-zinc-900">
         <Link href="/">
           <Image src={logo} width={44} height={44} alt="Skoh's logo" />
         </Link>
