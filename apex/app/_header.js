@@ -10,13 +10,13 @@ export default Header;
 
 function Header() {
   return (
-    <header className="font-bold p-5 flex justify-center border-b border-zinc-700/75 border-solid">
-      <div className="absolute left-2 top-2 rounded-full border-2 border-purple-700 bg-zinc-900">
+    <header className="font-bold flex justify-center border-b border-zinc-700/75 border-solid">
+      <div className="sm:absolute m-2 left-0 top-0 rounded-full border-2 border-purple-700 bg-zinc-900">
         <Link href="/">
           <Image src={logo} width={44} height={44} alt="Skoh's logo" />
         </Link>
       </div>
-      <div className="flex space-x-4">
+      <div className="flex space-x-4 p-5">
         <HeaderLink name="About" url="/about" />
         <HeaderLink name="Skills" url="/skills" />
         <HeaderLink name="Toolbox" url="/toolbox" />
