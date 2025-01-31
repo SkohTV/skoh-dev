@@ -33,5 +33,6 @@ WORKDIR /apex
 COPY --from=builder /apex/.next/standalone ./
 COPY --from=builder /apex/.next/static ./.next/static
 
+ENV PORT 5000
 EXPOSE 5000
 ENTRYPOINT ["bun", "/apex/server.js"]
