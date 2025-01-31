@@ -11,6 +11,7 @@ COPY package.json bun.lockb /apex/
 RUN bun install --frozen-lockfile
 
 
+
 # Build stage
 FROM base AS builder
 
@@ -23,6 +24,7 @@ COPY . .
 RUN bun run build
 
 
+
 # Release stage
 FROM base AS release
 
@@ -33,6 +35,6 @@ WORKDIR /apex
 COPY --from=builder /apex/.next/standalone ./
 COPY --from=builder /apex/.next/static ./.next/static
 
-ENV PORT 5000
 EXPOSE 5000
+ENV PORT 5000
 ENTRYPOINT ["bun", "/apex/server.js"]
