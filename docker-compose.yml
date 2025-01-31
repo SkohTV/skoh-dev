@@ -1,0 +1,37 @@
+services:
+
+  # NextJS webserver
+  apex:
+    build:
+      context: ./apex
+    ports:
+      - 5000:5000
+    networks:
+      - internal
+
+  # NGinx reverse proxy
+  nginx:
+    image: nginx:alpine
+
+    depends_on:
+      - apex
+
+    ports:
+      - 443:443
+    networks:
+      - internal
+      - external
+
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+
+      - /etc/letsencrypt/live/skoh.dev/fullchain.pem:/etc/ssl/skoh-dev/fullchain.pem:ro
+      - /etc/letsencrypt/live/skoh.dev/privkey.pem:/etc/ssl/skoh-dev/privkey.pem:ro
+
+
+networks:
+  internal:
+    name: internal
+    internal: true
+  external:
+    name: external

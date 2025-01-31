@@ -1,0 +1,36 @@
+name: Deploy on VPS
+
+
+on:
+  push:
+    branches:
+      - master
+
+
+concurrency:
+  group: 'skoh-dev'
+  cancel-in-progress: false
+
+
+jobs:
+
+  deploy:
+    name: deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: add ssh keys
+        run: |
+          install -m 600 -D /dev/null ~/.ssh/id_rsa
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          ssh-keyscan -H ${{ secrets.SSH_HOST }} > ~/.ssh/known_hosts
+
+      - name: connect and redeploy
+        run: |
+          ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "\
+          cd ${{ secrets.WORKDIR }} &&\
+          git reset --hard && git pull &&\
+          docker compose down && docker compose build && docker compose up -d"
+
+      - name: cleanup
+        run: rm -rf ~/.ssh
