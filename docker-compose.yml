@@ -24,6 +24,7 @@ services:
 
     volumes:
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./nginx/favicons/:/favicons/:ro
 
       - /etc/letsencrypt/live/skoh.dev/fullchain.pem:/etc/ssl/skoh-dev/fullchain.pem:ro
       - /etc/letsencrypt/live/skoh.dev/privkey.pem:/etc/ssl/skoh-dev/privkey.pem:ro
