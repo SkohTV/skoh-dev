@@ -6,7 +6,7 @@ export default Footer;
 
 function Footer() {
   return (
-    <footer className="p-5 flex items-center justify-between border-t border-zinc-700/75 border-solid">
+    <footer className="p-3 flex items-center justify-between border-t border-zinc-700/75 border-solid">
       <div className="flex">
         <FooterLink svg={GithubSVG} url="https://github.com/SkohTV" />
         <FooterLink svg={LinkedinSVG} url="https://www.linkedin.com/in/noe-lorret-despret/" />
