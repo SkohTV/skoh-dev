@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import "@/styles/globals.css";
 import logo from "@/assets/logo.png";
 
 
@@ -13,7 +12,7 @@ function Header() {
     <header className="font-bold flex justify-between items-center border-b border-zinc-700/75 border-solid">
       <div className="m-2 h-fit w-fit rounded-full border-2 border-purple-700 bg-zinc-900">
         <Link href="/">
-          <Image src={logo} width={44} height={44} className="min-w-[44px]" alt="Skoh's logo" />
+          <Image src={logo} width={44} height={44} className="min-w-[44px]" alt="Skoh logo" />
         </Link>
       </div>
       <div className="flex space-x-4 p-5">
