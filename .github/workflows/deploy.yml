@@ -30,7 +30,7 @@ jobs:
           ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "\
           cd ${{ secrets.WORKDIR }} &&\
           git reset --hard origin/master &&\
-          docker compose down && docker compose build && docker compose up -d"
+          docker compose build && docker compose down && docker compose up -d"
 
       - name: cleanup
         run: rm -rf ~/.ssh
