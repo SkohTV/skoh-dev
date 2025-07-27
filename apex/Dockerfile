@@ -8,7 +8,7 @@ FROM base AS deps
 WORKDIR /apex
 COPY package.json bun.lockb /apex/
 
-RUN bun install --frozen-lockfile
+RUN bun install --frozen-lockfile 
 
 
 
@@ -21,7 +21,7 @@ WORKDIR /apex
 COPY --from=deps /apex/node_modules node_modules
 COPY . .
 
-RUN bun run build
+RUN bun run build 
 
 
 
