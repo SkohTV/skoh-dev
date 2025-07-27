@@ -1,0 +1,23 @@
+name: Benchmark full website
+
+
+on:
+  push:
+    branches:
+      - dev
+
+
+concurrency:
+  group: 'skoh-dev'
+  cancel-in-progress: false
+
+
+jobs:
+
+  curl:
+    name: curl
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: wip
+        run: echo 1

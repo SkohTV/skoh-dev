@@ -1,0 +1,19 @@
+name: Lint commits
+
+
+on:
+  push
+
+jobs:
+
+  lint-commits:
+    name: Lint commit history
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout 
+        uses: actions/checkout@v4
+
+      - name: lint
+        run: .github/lint-commits
+
