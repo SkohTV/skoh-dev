@@ -6,18 +6,57 @@ on:
     branches:
       - dev
 
-
 concurrency:
   group: 'skoh-dev'
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 
 jobs:
 
-  curl:
-    name: curl
+  benchmarking:
     runs-on: ubuntu-latest
 
     steps:
-      - name: wip
-        run: echo 1
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      - uses: actions/configure-pages@v5
+
+      - name: Self signed SSL keys
+        run: |
+          sudo mkdir -p /etc/letsencrypt/live/skoh.dev
+          sudo openssl req -x509 -newkey rsa:4096 -sha256 -days 3650 -nodes \
+            -keyout /etc/letsencrypt/live/skoh.dev/privkey.pem \
+            -out /etc/letsencrypt/live/skoh.dev/fullchain.pem \
+            -subj "/CN=localhost"
+
+      - name: Start server
+        run: docker compose build && docker compose up -d
+
+      - name: Run Unlighthouse 
+        run: npx unlighthouse-ci --config-file .github/unlighthouse.json --build-static
+
+      - name: Upload artifact
+        id: deployment
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .unlighthouse/
+
+
+  gh-pages:
+    permissions:
+      id-token: write
+      pages: write
+
+    environment:
+      name: Upload to Github pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    runs-on: ubuntu-latest
+    needs: benchmarking
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

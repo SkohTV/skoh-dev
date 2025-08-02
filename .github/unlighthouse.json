@@ -1,0 +1,16 @@
+{
+  "site": "https://localhost:443",
+  "debug": true,
+
+  "scanner": {
+    "device": "desktop"
+  },
+
+  "puppeteerOptions": {
+   "ignoreHTTPSErrors": true,
+   "args": [
+      "--ignore-certificate-errors",
+      "--allow-insecure-localhost"
+    ]
+  }
+}
