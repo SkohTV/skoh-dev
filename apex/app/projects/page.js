@@ -7,6 +7,12 @@ export const metadata = {
 
 function Projects() {
   return (
-    <h1>Projects</h1>
+    <div>
+      <h1>Projects</h1>
+      <p>* Quantum</p>
+      <p>* skoh.tv</p>
+      <p>* Open Source</p>
+      <p>* Something else</p>
+    </div>
   );
 }

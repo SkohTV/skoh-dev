@@ -8,6 +8,9 @@ export const metadata = {
 
 function Toolbox() {
   return (
-    <h1>Toolbox</h1>
+    <div>
+      <h1>Toolbox</h1>
+      <p>Blabla</p>
+    </div>
   );
 }

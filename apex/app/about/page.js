@@ -8,6 +8,9 @@ export const metadata = {
 
 function About() {
   return (
-    <h1>About</h1>
+    <div>
+      <h1>About</h1>
+      <p>Blabla</p>
+    </div>
   );
 }
