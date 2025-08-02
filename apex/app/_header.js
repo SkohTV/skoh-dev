@@ -22,7 +22,7 @@ function Header() {
         <HeaderLink name="Projects" url="/projects" />
       </div>
       <div className="flex space-x-4 p-5">
-        <BlogLink name="Blog" url="https://blog.skoh.dev" />
+        <BlogLink name="Wip..." url="https://skoh.dev" />
       </div>
     </header>
   );
