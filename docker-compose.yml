@@ -49,7 +49,7 @@ networks:
     internal: true
   lhci:
     name: lhci
-    # internal: true
+    internal: true
   external:
     name: external
 
