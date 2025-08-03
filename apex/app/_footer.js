@@ -22,6 +22,7 @@ function FooterLink({ svg, url }) {
     <Link
       href={url}
       className="fill-white opacity-70 hover:opacity-100 duration-100 m-2"
+      aria-label="Socials link"
     >
       { svg({ size: 20 }) }
     </Link>
