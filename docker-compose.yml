@@ -49,7 +49,7 @@ networks:
     internal: true
   perfs:
     name: perfs
-    internal: true
+    # internal: true
   external:
     name: external
 
