@@ -18,7 +18,7 @@
 
   "upload": {
     "target": "lhci",
-    "serverBaseUrl": "https://lhci.skoh.dev",
+    "serverBaseUrl": "https://lhci.skoh.dev"
   }
 
 } }
