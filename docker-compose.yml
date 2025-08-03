@@ -10,13 +10,13 @@ services:
       - apex
 
   # LHCI server
-  perfs:
+  lhci:
     build:
-      context: ./perfs
+      context: ./lhci
     ports:
       - 9001:9001
     networks:
-        - perfs
+        - lhci
     volumes:
       - lhci-data:/data
 
@@ -26,13 +26,13 @@ services:
 
     depends_on:
       - apex
-      - perfs
+      - lhci
 
     ports:
       - 443:443
     networks:
       - apex
-      - perfs
+      - lhci
       - external
 
     volumes:
@@ -47,9 +47,9 @@ networks:
   apex:
     name: apex
     internal: true
-  perfs:
-    name: perfs
-    # internal: true
+  lhci:
+    name: lhci
+    internal: true
   external:
     name: external
 
