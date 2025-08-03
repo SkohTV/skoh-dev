@@ -11,7 +11,8 @@
     ],
 
     "settings": {
-      "chromeFlags": "--ignore-certificate-errors"
+      "chromeFlags": "--ignore-certificate-errors",
+      "preset": "desktop"
     }
 
   },
