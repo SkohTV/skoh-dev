@@ -15,6 +15,9 @@ jobs:
 
   benchmarking:
     runs-on: ubuntu-latest
+    env:
+      LHCI_TOKEN: ${{ secrets.LHCI_TOKEN }}
+
 
     steps:
       - uses: actions/checkout@v4
