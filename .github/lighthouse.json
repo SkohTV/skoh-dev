@@ -1,0 +1,23 @@
+{ "ci": {
+
+  "collect": {
+
+    "url": [
+      "https://localhost:443",
+      "https://localhost:443/about",
+      "https://localhost:443/skills",
+      "https://localhost:443/toolbox",
+      "https://localhost:443/projects"
+    ],
+
+    "settings": {
+      "chromeFlags": "--ignore-certificate-errors"
+    }
+
+  },
+
+  "upload": {
+    "target": "temporary-public-storage"
+  }
+
+} }
