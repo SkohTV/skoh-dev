@@ -38,7 +38,7 @@ jobs:
         run: docker compose build && docker compose up -d
 
       - name: Run Lighthouse 
-        run: npx @lhci/cli@0.15.1 collect --config .github/lighthouse.json --build-static
+        run: npx @lhci/cli@0.15.1 autorun --config .github/lighthouse.json
 
       # - name: Upload artifact
       #   id: deployment
