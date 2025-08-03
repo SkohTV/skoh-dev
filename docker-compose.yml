@@ -9,17 +9,30 @@ services:
     networks:
       - apex
 
+  # LHCI server
+  perfs:
+    build:
+      context: ./perfs
+    ports:
+      - 9001:9001
+    networks:
+        - perfs
+    volumes:
+      - lhci-data:/data
+
   # NGinx reverse proxy
   nginx:
     image: nginx:alpine
 
     depends_on:
       - apex
+      - perfs
 
     ports:
       - 443:443
     networks:
       - apex
+      - perfs
       - external
 
     volumes:
@@ -34,5 +47,12 @@ networks:
   apex:
     name: apex
     internal: true
+  perfs:
+    name: perfs
+    internal: true
   external:
     name: external
+
+
+volumes:
+  lhci-data:
