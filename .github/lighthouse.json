@@ -5,9 +5,9 @@
     "url": [
       "https://localhost:443",
       "https://localhost:443/about",
-      "https://localhost:443/skills",
       "https://localhost:443/toolbox",
-      "https://localhost:443/projects"
+      "https://localhost:443/projects",
+      "https://localhost:443/contact"
     ],
 
     "settings": {
