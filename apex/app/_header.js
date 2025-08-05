@@ -17,12 +17,12 @@ function Header() {
       </div>
       <div className="flex space-x-4 p-5">
         <HeaderLink name="About" url="/about" />
-        <HeaderLink name="Skills" url="/skills" />
         <HeaderLink name="Toolbox" url="/toolbox" />
         <HeaderLink name="Projects" url="/projects" />
+        <HeaderLink name="Contact" url="/contact" />
       </div>
       <div className="flex space-x-4 p-5">
-        <BlogLink name="Wip..." url="https://skoh.dev" />
+        <BlogLink name="wip" url="https://skoh.dev" />
       </div>
     </header>
   );

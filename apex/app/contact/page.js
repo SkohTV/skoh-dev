@@ -1,15 +1,15 @@
-export default Skills;
+export default Contact;
 
 export const metadata = {
-  title: 'Skills',
+  title: 'Contact',
   description: 'Wip',
 }
 
 
-function Skills() {
+function Contact() {
   return (
     <div>
-      <h1>Skills</h1>
+      <h1>Contact</h1>
       <p>Blabla</p>
     </div>
   );
