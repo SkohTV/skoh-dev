@@ -32,7 +32,7 @@ function HeaderLink({ name, icon, url }) {
   return (
     <Link
       href={url}
-      className="hover:bg-violet-600 duration-100 px-1 fill-black stroke-white"
+      className="hover:bg-violet-600 duration-100 px-1 stroke-white"
     >
       <span className="block sm:hidden">{icon}</span>
       <span className="hidden sm:block">{name}</span>
