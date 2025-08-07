@@ -9,10 +9,10 @@ function Projects() {
   return (
     <div>
       <h1>Projects</h1>
-      <p>* Quantum</p>
-      <p>* skoh.tv</p>
-      <p>* Open Source</p>
-      <p>* Something else</p>
+      <p>* Quantum (wip)</p>
+      <p>* RISC-V Mars (todo)</p>
+      <p>* Something else (wait)</p>
+      <p>* Open Source (wip)</p>
     </div>
   );
 }
