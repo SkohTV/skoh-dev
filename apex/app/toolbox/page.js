@@ -1,12 +1,10 @@
-export default Toolbox;
-
 export const metadata = {
   title: 'Toolbox',
   description: 'Wip',
 }
 
 
-function Toolbox() {
+export default function Toolbox() {
   return (
     <div>
       <h1>Toolbox</h1>

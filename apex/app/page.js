@@ -1,12 +1,10 @@
-export default Home;
-
 export const metadata = {
   title: 'Home',
   description: 'Wip',
 }
 
 
-function Home() {
+export default function Home() {
   return (
     <h1>Home</h1>
   );

@@ -1,14 +1,12 @@
 import Link from "next/link";
 
-export default Contact;
-
 export const metadata = {
   title: 'Contact',
   description: 'Wip',
 }
 
 
-function Contact() {
+export default function Contact() {
   return (
     <div>
       <h1>Contact</h1>
