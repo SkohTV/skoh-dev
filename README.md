@@ -1,6 +1,6 @@
 # skoh-dev
 My personnal website & portfolio  
-[Results of dev benchmark](https://skohtv.github.io/skoh-dev/)  
+[Results of dev benchmark](https://lhci.skoh.dev/app/projects/skoh-dev/dashboard)  
 
 ## Dev mode
 For apex: `bun run dev`  
