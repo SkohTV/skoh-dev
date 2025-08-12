@@ -12,7 +12,7 @@ export default function Contact() {
       <h1>Contact</h1>
       <p>Discord, at <PLink url="https://discord.com/users/373055398464323584">@skoh</PLink></p>
       <p>Mail, at <PLink url="mailto:contact@skoh.dev">contact@skoh.dev</PLink></p>
-      <p>Phone, at <PLink url="tel:+330695654352">+33 6 95 65 43 52</PLink></p>
+      <p>Phone, at <PLink url="tel:+33638384138">+33 6 38 38 41 38</PLink></p>
     </div>
   );
 }
