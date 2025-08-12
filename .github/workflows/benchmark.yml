@@ -41,27 +41,3 @@ jobs:
 
       - name: Run Lighthouse 
         run: npx @lhci/cli@0.15.1 autorun --config .github/lighthouse.json
-
-      # - name: Upload artifact
-      #   id: deployment
-      #   uses: actions/upload-pages-artifact@v3
-      #   with:
-      #     path: .unlighthouse/
-
-
-  # gh-pages:
-  #   permissions:
-  #     id-token: write
-  #     pages: write
-  #
-  #   environment:
-  #     name: Upload to Github pages
-  #     url: ${{ steps.deployment.outputs.page_url }}
-  #
-  #   runs-on: ubuntu-latest
-  #   needs: benchmarking
-  #
-  #   steps:
-  #     - name: Deploy to GitHub Pages
-  #       id: deployment
-  #       uses: actions/deploy-pages@v4
