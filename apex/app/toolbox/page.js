@@ -8,7 +8,9 @@ export default function Toolbox() {
   return (
     <div>
       <h1>Toolbox</h1>
-      <p>Blabla</p>
+      <p>Langages</p>
+      <p>Tooling</p>
+      <p>Software</p>
     </div>
   );
 }

@@ -8,7 +8,9 @@ export default function About() {
   return (
     <div>
       <h1>About</h1>
-      <p>Blabla</p>
+      <p>Who am I</p>
+      <p>Passions</p>
+      <p>Timeline</p>
     </div>
   );
 }

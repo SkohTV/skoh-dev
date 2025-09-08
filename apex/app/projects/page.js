@@ -10,8 +10,8 @@ function Projects() {
     <div>
       <h1>Projects</h1>
       <p>* Quantum (wip)</p>
-      <p>* RISC-V Mars (todo)</p>
-      <p>* Something else (wait)</p>
+      <p>* Remote Desktop (wip)</p>
+      <p>* RISC-V Mars OR r-pi (todo)</p>
       <p>* Open Source (wip)</p>
     </div>
   );

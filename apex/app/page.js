@@ -6,6 +6,11 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <h1>Home</h1>
+    <div>
+      <p>Logo + socials</p>
+      <p>Small about me</p>
+      <p>Current location + time</p>
+      <p>Currently working/looking/...</p>
+    </div>
   );
 }
