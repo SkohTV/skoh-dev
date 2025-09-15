@@ -15,8 +15,7 @@ export default function Header() {
         <HeaderLink name="Projects" icon={ProjectsSVG({ size: 24 })} url="/projects" />
         <HeaderLink name="Contact" icon={ContactSVG({ size: 24 })} url="/contact" />
       </div>
-      <div className="flex space-x-4 p-5">
-      </div>
+      <div className="hidden sm:flex space-x-4 p-5"></div>
     </header>
   );
 }

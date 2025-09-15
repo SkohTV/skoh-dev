@@ -23,9 +23,9 @@ export default async function Home() {
   } catch { }
 
   return (
-    <div className="flex flex-col justify-center h-3/4">
-      <div className="m-2 h-fit w-fit rounded-full border-8 border-purple-700 place-self-center">
-        <Image src={logo} width={300} height={300} className="rounded-full" alt="Skoh logo" />
+    <div className="flex flex-col justify-center">
+      <div className="m-2 h-fit w-fit rounded-full border-8 border-purple-700 place-self-center max-w-xs">
+        <Image src={logo} className="rounded-full" alt="Skoh logo" />
       </div>
       <div className="flex justify-center">
         <SocialLink svg={GithubSVG} url="https://github.com/SkohTV" />
