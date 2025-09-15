@@ -33,13 +33,13 @@ export default async function Home() {
         <SocialLink svg={DiscordSVG} url="https://discord.com/users/373055398464323584" />
       </div>
       <p className="text-center m-8">
-        I'm a 21yo French student in my 4th year of Computer Science, in love with Low-level programming and Open-source.<br />
+        I<Apos />m a 21yo French student in my 4th year of Computer Science, in love with Low-level programming and Open-source.<br />
         In my free time, I work on personal <InnerLink url="/projects" text="coding projects" />, contribute to <InnerLink url="https://github.com/SkohTV?tab=repositories&type=fork" text="Open-source" /> and create videos for my <InnerLink url="https://www.youtube.com/@skoh" text="YouTube channel" />.
       </p>
       <p className="text-center mb-2">
         🌎 <InnerLink url={`https://www.openstreetmap.org/search?query=${encodeURIComponent(location)}`} text={location} />
       </p>
-      <p className="text-center">I'm currently <InnerLink url="https://www.isen.fr/" text="studying" /> and looking for <InnerLink url="/resume.pdf" text="an internship" /></p>
+      <p className="text-center">I<Apos />m currently <InnerLink url="https://www.isen.fr/" text="studying" /> and looking for <InnerLink url="/resume.pdf" text="an internship" /></p>
     </div>
   );
 }
@@ -65,4 +65,8 @@ function InnerLink({ text, url }) {
   >
     {text}
   </Link>
+}
+
+function Apos() {
+  return '&apos'
 }
