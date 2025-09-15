@@ -11,7 +11,8 @@ function Projects() {
       <h1>Projects</h1>
       <p>* Quantum (wip)</p>
       <p>* Remote Desktop (wip)</p>
-      <p>* RISC-V Mars OR r-pi (todo)</p>
+      <p>* ocl-rs</p>
+      <p>* r-pi onlyoffice (todo)</p>
       <p>* Open Source (wip)</p>
     </div>
   );
