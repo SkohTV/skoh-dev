@@ -32,7 +32,7 @@ export default async function Home() {
         <SocialLink svg={LinkedinSVG} url="https://www.linkedin.com/in/noe-lorret-despret/" />
         <SocialLink svg={DiscordSVG} url="https://discord.com/users/373055398464323584" />
       </div>
-      <p className="text-center m-12">
+      <p className="text-center my-12 mx-2">
         I&apos;m a 21yo French student in my 4th year of Computer Science, in love with Low-level programming and Open-source.<br />
         In my free time, I work on personal <InnerLink url="/projects" text="coding projects" />, contribute to <InnerLink url="https://github.com/SkohTV?tab=repositories&type=fork" text="Open-source" /> and create videos for my <InnerLink url="https://www.youtube.com/@skoh" text="YouTube channel" />.
       </p>
