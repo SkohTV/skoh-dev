@@ -5,11 +5,11 @@ import { AboutSVG, ToolboxSVG, ProjectsSVG, ContactSVG } from "./_svg";
 
 export default function Header() {
   return (
-    <header className="font-bold flex justify-start items-center border-b border-zinc-700/75 border-solid">
+    <header className="font-bold flex sm:justify-start justify-between items-center border-b border-zinc-700/75 border-solid">
       <div className="flex space-x-4 p-5">
         <Link href="/" className="hover:bg-violet-600 duration-100 px-1 stroke-white text-xl">Skøh</Link>
       </div>
-      <div className="absolute left-1/2 transform-[translateX(-50%)]">
+      <div className="sm:absolute left-1/2 sm:transform-[translateX(-50%)] flex transform-none">
         <div className="flex space-x-4 p-5">
           <HeaderLink name="About" icon={AboutSVG({ size: 24 })} url="/about" />
           <HeaderLink name="Toolbox" icon={ToolboxSVG({ size: 24 })} url="/toolbox" />
