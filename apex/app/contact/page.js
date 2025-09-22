@@ -8,9 +8,9 @@ export const metadata = {
 
 export default function Contact() {
   return (
-    <div className="text-center p-16">
+    <div className="text-center pt-16">
       <h1 className="text-2xl font-bold">Contact me on</h1>
-      <div className="p-4">
+      <div className="py-4">
         <p>Discord, at <PLink url="https://discord.com/users/373055398464323584">@skoh</PLink></p>
         <p>Mail, at <PLink url="mailto:contact@skoh.dev">contact@skoh.dev</PLink></p>
         <p>LinkedIn, at <PLink url="https://www.linkedin.com/in/noe-lorret-despret/">in/noe-lorret-despret</PLink></p>
