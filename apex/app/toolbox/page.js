@@ -11,7 +11,7 @@ export const metadata = {
 export default function Toolbox() {
   return (
     <div>
-      <h1 className="text-2xl font-bold">🛠 Toolbox 🛠</h1>
+      <h1 className="text-2xl font-bold mb-16">🛠 Toolbox 🛠</h1>
 
       <h2 className="text-xl">Langages</h2>
       <Box>
@@ -45,7 +45,7 @@ export default function Toolbox() {
 
 function Box({ children }) {
   return (
-    <div className="flex items-center h-24">
+    <div className="flex items-center h-20 mb-4">
       {children}
     </div>
   );
