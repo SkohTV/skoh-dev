@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import logo from "@/assets/logo_bg.png";
+import logo_pic from "@/assets/logo_pic.jpg";
 import { GithubSVG, LinkedinSVG, DiscordSVG } from "./_svg";
 
 
@@ -24,8 +25,9 @@ export default async function Home() {
 
   return (
     <div className="flex flex-col justify-center">
-      <div className="m-2 h-fit w-fit rounded-full border-8 border-purple-700 place-self-center max-w-xs">
+      <div className="m-2 h-fit w-fit rounded-full border-8 border-purple-700 place-self-center max-w-xs relative">
         <Image src={logo} className="rounded-full" alt="Skoh logo" />
+        <Image src={logo_pic} className="rounded-full absolute top-0 left-0 opacity-0 hover:opacity-100 duration-300" alt="Skoh logo" />
       </div>
       <div className="flex justify-center">
         <SocialLink svg={GithubSVG} url="https://github.com/SkohTV" />
