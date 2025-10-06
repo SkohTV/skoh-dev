@@ -19,7 +19,7 @@ export default function Toolbox() {
         <Tool img="rust" url="https://www.rust-lang.org" name="Rust" msg="Also my favorite language" />&nbsp;
         &nbsp;&nbsp;&nbsp;
         <Tool img="lua" url="https://www.lua.org" name="Lua" msg="Simple and lightweight" />&nbsp;
-        <Tool img="js" url="https://developer.mozilla.org/en-US/docs/Web/JavaScript" name="JavaScript" msg="Web scripting scrapyard" />&nbsp;
+        <Tool img="js" url="https://developer.mozilla.org/en-US/docs/Web/JavaScript" name="JavaScript" msg="Overkill web scripting" />&nbsp;
         <Tool img="cpp" url="https://www.cplusplus.com" name="C++" msg="Older Rust" />&nbsp;
         <Tool img="c" url="https://www.cprogramming.com" name="C" msg="Older C++" />
       </Box>
