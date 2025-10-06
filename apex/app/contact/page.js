@@ -12,8 +12,8 @@ export default function Contact() {
       <h1 className="text-2xl font-bold">Contact me on</h1>
       <div className="py-4">
         <p>Discord, at <PLink url="https://discord.com/users/373055398464323584">@skoh</PLink></p>
-        <p>Mail, at <PLink url="mailto:noe.lorretdespret@proton.me">noe.lorretdespret@proton.me</PLink></p>
         <p>LinkedIn, at <PLink url="https://www.linkedin.com/in/noe-lorret-despret/">in/noe-lorret-despret</PLink></p>
+        <p>Mail, at <PLink url="mailto:noe.lorretdespret@proton.me">noe.lorretdespret@proton.me</PLink></p>
       </div>
       <div>
         <p>Download my <PLink url="/resume.pdf">resume</PLink></p>
