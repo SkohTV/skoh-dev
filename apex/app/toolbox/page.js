@@ -11,7 +11,7 @@ export const metadata = {
 export default function Toolbox() {
   return (
     <div>
-      <h1 className="text-2xl font-bold mb-16">🛠 Toolbox 🛠</h1>
+      <h1 className="text-2xl text-center font-bold py-8">🛠 Toolbox 🛠</h1>
 
       <h2 className="text-xl">Langages</h2>
       <Box>

@@ -8,7 +8,7 @@ export const metadata = {
 
 export default function Contact() {
   return (
-    <div className="text-center pt-16">
+    <div className="text-center pt-8">
       <h1 className="text-2xl font-bold">Contact me on</h1>
       <div className="py-4">
         <p>Discord, at <PLink url="https://discord.com/users/373055398464323584">@skoh</PLink></p>
