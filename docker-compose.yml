@@ -16,9 +16,37 @@ services:
     ports:
       - 9001:9001
     networks:
-        - lhci
+      - lhci
     volumes:
       - lhci-data:/data
+
+  # Open WebUI
+  # openwebui:
+  #   image: ghcr.io/open-webui/open-webui:main
+  #
+  #   ports:
+  #     - 8080:8080
+  #   networks:
+  #     - shared
+  #   volumes:
+  #     - open-webui:/app/backend/data
+  #
+  #   environment:
+  #     WEBUI_AUTH: False
+
+  # Beszel
+  # beszel:
+  #   image: henrygd/beszel
+  #   container_name: beszel
+  #   restart: unless-stopped
+  #
+  #   ports:
+  #     - 8090:8090
+  #   volumes:
+  #     - ./beszel_data:/beszel_data
+  #   networks:
+  #     - shared
+
 
   # NGinx reverse proxy
   nginx:
@@ -27,6 +55,8 @@ services:
     depends_on:
       - apex
       - lhci
+      # - openwebui
+      # - beszel
 
     ports:
       - 443:443
@@ -38,9 +68,11 @@ services:
     volumes:
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
       - ./nginx/favicons/:/favicons/:ro
+      - ./all/:/all/:ro
 
       - /etc/letsencrypt/live/skoh.dev/fullchain.pem:/etc/ssl/skoh-dev/fullchain.pem:ro
       - /etc/letsencrypt/live/skoh.dev/privkey.pem:/etc/ssl/skoh-dev/privkey.pem:ro
+
 
 
 networks:
@@ -54,5 +86,7 @@ networks:
     name: external
 
 
+
 volumes:
   lhci-data:
+  open-webui:
