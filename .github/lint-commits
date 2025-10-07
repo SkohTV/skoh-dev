@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 
-regex="^(treewide|nix|ci|docs|apex|lhci|ai|beszel|nginx|docker)(\(.+\))?: .*$"
+regex="^(treewide|nix|ci|docs|apex|lhci|all|ai|beszel|nginx|docker)(\(.+\))?: .*$"
 
 
 # Check full history
