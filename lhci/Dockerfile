@@ -1,1 +1,0 @@
-FROM patrickhulce/lhci-server

@@ -4,48 +4,35 @@ services:
   apex:
     build:
       context: ./apex
-    ports:
-      - 5000:5000
     networks:
-      - apex
+        - internal
 
-  # LHCI server
-  lhci:
-    build:
-      context: ./lhci
-    ports:
-      - 9001:9001
-    networks:
-      - lhci
-    volumes:
-      - lhci-data:/data
-
-  # Open WebUI
+  # # Open WebUI
   # openwebui:
   #   image: ghcr.io/open-webui/open-webui:main
   #
-  #   ports:
-  #     - 8080:8080
+  #   # ports:
+  #   #   - 8080:8080
   #   networks:
-  #     - shared
+  #     - internal
   #   volumes:
   #     - open-webui:/app/backend/data
   #
   #   environment:
   #     WEBUI_AUTH: False
 
-  # Beszel
+  # # Beszel
   # beszel:
   #   image: henrygd/beszel
   #   container_name: beszel
   #   restart: unless-stopped
   #
-  #   ports:
-  #     - 8090:8090
-  #   volumes:
-  #     - ./beszel_data:/beszel_data
+  #   # ports:
+  #   #   - 8090:8090
   #   networks:
-  #     - shared
+  #     - internal
+  #   volumes:
+  #     - beszel_data:/beszel_data
 
 
   # NGinx reverse proxy
@@ -54,16 +41,14 @@ services:
 
     depends_on:
       - apex
-      - lhci
       # - openwebui
       # - beszel
 
     ports:
       - 443:443
     networks:
-      - apex
-      - lhci
-      - external
+        - internal
+        - external
 
     volumes:
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
@@ -76,17 +61,10 @@ services:
 
 
 networks:
-  apex:
-    name: apex
-    internal: true
-  lhci:
-    name: lhci
+  internal:
     internal: true
   external:
-    name: external
-
-
 
 volumes:
-  lhci-data:
+  beszel_data:
   open-webui:

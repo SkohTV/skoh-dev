@@ -1,10 +1,21 @@
 # skoh-dev
 My personnal website & portfolio  
-[Results of dev benchmark](https://lhci.skoh.dev/app/projects/skoh-dev/dashboard)  
 
-## Dev mode
-For apex: `bun run dev`  
-For nginx: NA
+## TODO
 
-## Release mode
-With docker compose
+skoh.dev -> Light mode
+skoh.dev -> about me
+skoh.dev -> projects
+
+Modularize docker / nginx
+favicons
+
+custom auth module
+
+```
+my.skoh.dev/monitor
+my.skoh.dev/llm 
+my.skoh.dev/jupyter
+skoh.dev
+```
+
