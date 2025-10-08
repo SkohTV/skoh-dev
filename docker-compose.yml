@@ -18,8 +18,8 @@ services:
     volumes:
       - open-webui:/app/backend/data
 
-    environment:
-      WEBUI_AUTH: False
+    # environment:
+    #   WEBUI_AUTH: False
 
   # Beszel
   beszel:
