@@ -11,13 +11,10 @@ services:
   openwebui:
     image: ghcr.io/open-webui/open-webui:main
 
-    # ports:
-    #   - 8080:8080
     networks:
       - external
     volumes:
       - open-webui:/app/backend/data
-
     # environment:
     #   WEBUI_AUTH: False
 
@@ -27,8 +24,6 @@ services:
     container_name: beszel
     restart: unless-stopped
 
-    # ports:
-    #   - 8090:8090
     networks:
       - external
     volumes:
@@ -45,6 +40,7 @@ services:
       - beszel
 
     ports:
+      - 80:80
       - 443:443
     networks:
         - internal
