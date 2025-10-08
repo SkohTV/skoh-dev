@@ -9,7 +9,7 @@ services:
 
   # Open WebUI
   openwebui:
-    image: ghcr.io/open-webui/open-webui:main
+    image: ghcr.io/open-webui/open-webui:0.6.33
 
     networks:
       - external
@@ -20,7 +20,7 @@ services:
 
   # Beszel
   beszel:
-    image: henrygd/beszel
+    image: henrygd/beszel:0.13.1
     container_name: beszel
     restart: unless-stopped
 
