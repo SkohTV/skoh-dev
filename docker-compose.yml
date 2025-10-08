@@ -7,32 +7,32 @@ services:
     networks:
         - internal
 
-  # # Open WebUI
-  # openwebui:
-  #   image: ghcr.io/open-webui/open-webui:main
-  #
-  #   # ports:
-  #   #   - 8080:8080
-  #   networks:
-  #     - internal
-  #   volumes:
-  #     - open-webui:/app/backend/data
-  #
-  #   environment:
-  #     WEBUI_AUTH: False
+  # Open WebUI
+  openwebui:
+    image: ghcr.io/open-webui/open-webui:main
 
-  # # Beszel
-  # beszel:
-  #   image: henrygd/beszel
-  #   container_name: beszel
-  #   restart: unless-stopped
-  #
-  #   # ports:
-  #   #   - 8090:8090
-  #   networks:
-  #     - internal
-  #   volumes:
-  #     - beszel_data:/beszel_data
+    # ports:
+    #   - 8080:8080
+    networks:
+      - internal
+    volumes:
+      - open-webui:/app/backend/data
+
+    environment:
+      WEBUI_AUTH: False
+
+  # Beszel
+  beszel:
+    image: henrygd/beszel
+    container_name: beszel
+    restart: unless-stopped
+
+    # ports:
+    #   - 8090:8090
+    networks:
+      - internal
+    volumes:
+      - beszel_data:/beszel_data
 
 
   # NGinx reverse proxy
@@ -41,8 +41,8 @@ services:
 
     depends_on:
       - apex
-      # - openwebui
-      # - beszel
+      - openwebui
+      - beszel
 
     ports:
       - 443:443
@@ -53,7 +53,7 @@ services:
     volumes:
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
       - ./nginx/favicons/:/favicons/:ro
-      - ./all/:/all/:ro
+      - ./nginx/.htpasswd:/etc/nginx/.htpasswd:ro
 
       - /etc/letsencrypt/live/skoh.dev/fullchain.pem:/etc/ssl/skoh-dev/fullchain.pem:ro
       - /etc/letsencrypt/live/skoh.dev/privkey.pem:/etc/ssl/skoh-dev/privkey.pem:ro
