@@ -14,7 +14,7 @@ services:
     # ports:
     #   - 8080:8080
     networks:
-      - internal
+      - external
     volumes:
       - open-webui:/app/backend/data
 
@@ -27,10 +27,10 @@ services:
     container_name: beszel
     restart: unless-stopped
 
-    ports:
-      - 8090:8090
+    # ports:
+    #   - 8090:8090
     networks:
-      - internal
+      - external
     volumes:
       - beszel_data:/beszel_data
 
