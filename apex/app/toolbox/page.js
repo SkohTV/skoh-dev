@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 
 
@@ -10,7 +9,7 @@ export const metadata = {
 
 export default function Toolbox() {
   return (
-    <div>
+    <div className="px-4">
       <h1 className="text-2xl text-center font-bold py-8">Toolbox</h1>
 
       <h2 className="text-xl">Langages</h2>

@@ -6,11 +6,24 @@ export const metadata = {
 
 export default function About() {
   return (
-    <div>
-      <h1>About</h1>
-      <p>Who am I</p>
-      <p>Passions</p>
-      <p>Timeline</p>
+    <div className="px-4">
+      <h1 className="text-2xl text-center font-bold py-8">About me</h1>
+
+      <div className="pb-4">
+        <h2 className="text-xl">Who am I</h2>
+        <p>Blabla</p>
+      </div>
+
+      <div className="py-4"> 
+        <h2 className="text-xl">Passions</h2>
+        <p>Blabla</p>
+      </div>
+
+      <div className="pt-4">
+        <h2 className="text-xl">Timeline</h2>
+        <p>Blabla</p>
+      </div>
+
     </div>
   );
 }

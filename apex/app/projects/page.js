@@ -7,18 +7,18 @@ export const metadata = {
 
 function Projects() {
   return (
-    <div>
-      <h1>Projects</h1>
+    <div className="px-4">
+      <h1 className="text-2xl text-center font-bold py-8">Projects</h1>
 
-      <div>
-        <h2>Featured</h2>
+      <div className="pb-4">
+        <h2 className="text-xl">Featured</h2>
         <p>* Quantum (wip)</p>
         <p>* ocl-rs</p>
         <p>* Open Source (wip)</p>
       </div>
 
-      <div>
-        <h2>Small</h2>
+      <div className="pt-4">
+        <h2 className="text-xl">Smaller</h2>
         <p>* Dotfiles</p>
         <p>* Remote Desktop (wip)</p>
         <p>* skoh-dev</p>
