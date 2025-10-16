@@ -20,7 +20,7 @@ function Projects() {
       <div className="pt-4">
         <h2 className="text-xl">Smaller</h2>
         <p>* Dotfiles</p>
-        <p>* Remote Desktop (wip)</p>
+        <p>* Remote Desktop</p>
         <p>* skoh-dev</p>
         <p>* skoh-tv</p>
       </div>
