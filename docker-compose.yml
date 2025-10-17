@@ -29,6 +29,12 @@ services:
     volumes:
       - beszel_data:/beszel_data
 
+  # Homepage
+  homepage:
+    build:
+      context: ./homepage
+    networks:
+        - internal
 
   # NGinx reverse proxy
   nginx:
@@ -38,13 +44,14 @@ services:
       - apex
       - openwebui
       - beszel
+      - homepage
 
     ports:
       - 80:80
       - 443:443
     networks:
-        - internal
-        - external
+      - internal
+      - external
 
     volumes:
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
