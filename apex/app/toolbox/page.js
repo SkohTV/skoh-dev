@@ -56,7 +56,7 @@ function Tool({ img, url, name, msg }) {
     <div className="
       flex items-center
       rounded-md !duration-300 border-2 dark:bg-black/10 bg-white/10 overflow-hidden outline-[0px]
-      hover:border-indigo-600 hover:h-18 hover:w-68 hover:p-2
+      dark:hover:border-indigo-600 hover:border-indigo-400 hover:h-18 hover:w-68 hover:p-2
       border-transparent h-[48px] w-[48px]
     ">
         <img src={`https://skillicons.dev/icons?i=${img}`} className="h-full" alt={msg} />
