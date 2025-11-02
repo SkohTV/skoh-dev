@@ -32,6 +32,7 @@ ENV NODE_ENV production
 ENV NEXT_TELEMETRY_DISABLED 1
 
 WORKDIR /apex
+COPY --from=builder /apex/public ./public
 COPY --from=builder /apex/.next/standalone ./
 COPY --from=builder /apex/.next/static ./.next/static
 
