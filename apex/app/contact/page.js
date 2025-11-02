@@ -29,7 +29,7 @@ function PLink({ children, url }) {
   return (
     <Link
       href={url}
-      className="hover:text-violet-400 font-bold"
+      className="dark:hover:text-violet-400 hover:text-violet-500 font-bold"
     >
       {children}
     </Link>

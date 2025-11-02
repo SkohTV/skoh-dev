@@ -26,7 +26,7 @@ export default async function Home() {
   return (
     <div className="flex flex-col justify-center">
       <div className="m-2 mx-16 h-fit w-fit rounded-full border-8 dark:border-purple-700 border-purple-500 place-self-center max-w-xs relative">
-        <Image src={logo} className="rounded-full dark:opacity-100 dark:hover:opacity-0 opacity-100" alt="Skoh logo" />
+        <Image src={logo} className="rounded-full dark:hover:opacity-0" alt="Skoh logo" />
         <Image src={logo_pic} className="rounded-full absolute top-0 left-0 opacity-0 opacity-100 hover:opacity-0 dark:opacity-0 dark:hover:opacity-100 !duration-300" alt="Skoh logo" />
       </div>
       <div className="flex justify-center">
@@ -63,7 +63,7 @@ function SocialLink({ svg, url }) {
 function InnerLink({ text, url }) {
   return <Link
     href={url}
-    className="hover:text-violet-400 font-bold"
+    className="dark:hover:text-violet-400 hover:text-violet-500 font-bold"
   >
     {text}
   </Link>

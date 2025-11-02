@@ -43,7 +43,7 @@ export default function Projects() {
 
 function BigBox({ name, img, text, url }) {
   return (
-    <Link href={url} className="flex bg-zinc-800/30 p-2 my-2 border border-transparent hover:border-zinc-700 rounded-md md:w-150">
+    <Link href={url} className="flex dark:bg-zinc-800/30 bg-zinc-400/30 p-2 my-2 border border-transparent dark:hover:border-zinc-700 hover:border-zinc-500 rounded-md md:w-150">
       <div className="bg-zinc-800 p-1.5 rounded-md min-w-[68px]">
         <Image alt={name} src={img} width={56} height={56}/>
       </div>
@@ -58,7 +58,7 @@ function BigBox({ name, img, text, url }) {
 
 function SmallBox({ name, text, url }) {
   return (
-    <Link href={url} className="flex bg-zinc-800/30 p-2 border border-transparent hover:border-zinc-700 rounded-md">
+    <Link href={url} className="flex dark:bg-zinc-800/30 bg-zinc-400/30 p-2 border border-transparent dark:hover:border-zinc-700 hover:border-zinc-500 rounded-md">
       <div className="flex flex-col px-4 justify-center">
         <div className="font-bold pb-1">{name}</div>
         <div className="">{text}</div>
