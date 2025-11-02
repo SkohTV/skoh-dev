@@ -3,10 +3,8 @@ My personnal website & portfolio
 
 ## TODO
 
-skoh.dev -> Light mode
-skoh.dev -> about me
-skoh.dev -> projects
+skoh.dev -> Light mode  
+skoh.dev -> about me  
 
-Modularize docker / nginx
-favicons
-
+Modularize docker / nginx  
+favicons  

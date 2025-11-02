@@ -6,7 +6,7 @@ import "@/styles/globals.css";
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="bg-zinc-900 text-white flex flex-col h-screen text-sm">
+      <body className="dark:bg-zinc-900 bg-zinc-300 dark:text-white text-black flex flex-col h-screen text-sm">
         <Header />
         <div className="p-5 flex-grow">{children}</div>
         <Footer />

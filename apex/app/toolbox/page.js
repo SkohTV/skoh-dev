@@ -55,13 +55,13 @@ function Tool({ img, url, name, msg }) {
   return (
     <div className="
       flex items-center
-      rounded-md duration-300 border-2 bg-black/10 overflow-hidden outline-[0px]
+      rounded-md !duration-300 border-2 bg-black/10 overflow-hidden outline-[0px]
       hover:border-indigo-600 hover:h-18 hover:w-68 hover:p-2
       border-transparent h-[48px] w-[48px]
     ">
         <img src={`https://skillicons.dev/icons?i=${img}`} className="h-full" alt={msg} />
         <div className="m-2 text-start">
-          <Link href={url} className="font-bold hover:text-violet-400 duration-100">{name}</Link>
+          <Link href={url} className="font-bold hover:text-violet-400">{name}</Link>
           <p className="text-nowrap">{msg}</p>
         </div>
     </div>

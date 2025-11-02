@@ -25,9 +25,9 @@ export default async function Home() {
 
   return (
     <div className="flex flex-col justify-center">
-      <div className="m-2 mx-16 h-fit w-fit rounded-full border-8 border-purple-700 place-self-center max-w-xs relative">
-        <Image src={logo} className="rounded-full" alt="Skoh logo" />
-        <Image src={logo_pic} className="rounded-full absolute top-0 left-0 opacity-0 hover:opacity-100 duration-300" alt="Skoh logo" />
+      <div className="m-2 mx-16 h-fit w-fit rounded-full border-8 dark:border-purple-700 border-purple-500 place-self-center max-w-xs relative">
+        <Image src={logo} className="rounded-full dark:opacity-100 dark:hover:opacity-0 opacity-100" alt="Skoh logo" />
+        <Image src={logo_pic} className="rounded-full absolute top-0 left-0 opacity-0 opacity-100 hover:opacity-0 dark:opacity-0 dark:hover:opacity-100 !duration-300" alt="Skoh logo" />
       </div>
       <div className="flex justify-center">
         <SocialLink svg={GithubSVG} url="https://github.com/SkohTV" />
@@ -51,7 +51,7 @@ function SocialLink({ svg, url }) {
   return (
     <Link
       href={url}
-      className="fill-white opacity-70 hover:opacity-100 duration-100 m-2"
+      className="dark:fill-white fill-black opacity-70 hover:opacity-100 m-2"
       aria-label="Socials link"
     >
       { svg({ size: 24 }) }
@@ -63,7 +63,7 @@ function SocialLink({ svg, url }) {
 function InnerLink({ text, url }) {
   return <Link
     href={url}
-    className="hover:text-violet-400 duration-100 font-bold"
+    className="hover:text-violet-400 font-bold"
   >
     {text}
   </Link>

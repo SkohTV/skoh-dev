@@ -1,13 +1,16 @@
+'use client';
+
 import Link from "next/link";
 
-import { AboutSVG, ToolboxSVG, ProjectsSVG, ContactSVG } from "./_svg";
+import { AboutSVG, ToolboxSVG, ProjectsSVG, ContactSVG, SunSVG, MoonSVG } from "./_svg";
+import { useEffect, useState } from "react";
 
 
 export default function Header() {
   return (
-    <header className="font-bold flex sm:justify-start justify-between items-center border-b border-zinc-700/75 border-solid">
+    <header className="font-bold flex sm:justify-between justify-between items-center border-b dark:border-zinc-700/75 border-zinc-400/75 border-solid">
       <div className="flex space-x-4 p-5">
-        <Link href="/" className="hover:bg-violet-600 duration-100 px-1 stroke-white text-xl">Skøh</Link>
+        <Link href="/" className="dark:hover:bg-violet-600 hover:bg-violet-400 px-1 stroke-white text-xl">Skøh</Link>
       </div>
       <div className="sm:absolute left-1/2 sm:transform-[translateX(-50%)] flex transform-none">
         <div className="flex space-x-4 p-5">
@@ -17,6 +20,7 @@ export default function Header() {
           <HeaderLink name="Contact" icon={ContactSVG({ size: 24 })} url="/contact" />
         </div>
       </div>
+      <ThemeToggle />
     </header>
   );
 }
@@ -27,10 +31,40 @@ function HeaderLink({ name, icon, url }) {
   return (
     <Link
       href={url}
-      className="hover:bg-violet-600 duration-100 px-1 stroke-white"
+      className="dark:hover:bg-violet-600 hover:bg-violet-400 px-1 dark:stroke-white stroke-black"
     >
       <span className="block sm:hidden">{icon}</span>
       <span className="hidden sm:block">{name}</span>
     </Link>
   );
 }
+
+const ThemeToggle = () => {
+  const [darkTheme, setDarkTheme] = useState(true);
+
+  useEffect(() => {
+    const theme = localStorage.getItem('theme');
+    setDarkTheme(theme === 'dark')
+  }, []);
+
+  useEffect(() => {
+    if (darkTheme) {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+    }
+  }, [darkTheme]);
+
+  return (
+  <div className="p-4 dark:stroke-white stroke-black">
+    <button onClick={() => setDarkTheme(!darkTheme)}>
+      <div className="cursor-pointer p-1.5 dark:bg-zinc-800 bg-zinc-300 rounded-full border dark:border-zinc-700 border-zinc-400">
+        {darkTheme ? <MoonSVG size={24} /> : <SunSVG size={24} /> }
+      </div>
+    </button>
+  </div>
+  );
+};
+
