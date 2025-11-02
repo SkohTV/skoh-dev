@@ -44,7 +44,7 @@ export default function Projects() {
 function BigBox({ name, img, text, url }) {
   return (
     <Link href={url} className="flex bg-zinc-800/30 p-2 m-2 border border-transparent hover:border-zinc-700 duration-100 rounded-md md:w-150">
-      <div className="bg-zinc-800 p-1.5 rounded-md">
+      <div className="bg-zinc-800 p-1.5 rounded-md w-[60px]">
         <Image alt={name} src={img} width={48} height={48}/>
       </div>
       <div className="flex flex-col px-4 justify-around py-1">
