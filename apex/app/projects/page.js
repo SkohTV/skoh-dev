@@ -24,7 +24,7 @@ export default function Projects() {
       </div>
 
       <div className="pt-4">
-        <h2 className="text-xl">Smaller</h2>
+        <h2 className="text-xl pb-2">Smaller</h2>
         <div className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           <SmallBox name="Dotfiles" url="https://github.com/SkohTV/dotfiles" text="Personnal NixOS configuration files" />
           <SmallBox name="Remote Desktop" url="https://github.com/SkohTV/remote-desktop/" text="Desktop-in-cloud setup, using AWS & other automations" />
