@@ -8,7 +8,7 @@ import { GithubSVG, LinkedinSVG, DiscordSVG } from "./_svg";
 
 export const metadata = {
   title: 'Home',
-  description: 'Wip',
+  description: 'Personnal website of Skoh',
 }
 
 
@@ -27,7 +27,7 @@ export default async function Home() {
     <div className="flex flex-col justify-center">
       <div className="m-2 mx-16 h-fit w-fit rounded-full border-8 dark:border-purple-700 border-purple-500 place-self-center max-w-xs relative">
         <Image src={logo} className="rounded-full dark:hover:opacity-0" alt="Skoh logo" />
-        <Image src={logo_pic} className="rounded-full absolute top-0 left-0 opacity-0 opacity-100 hover:opacity-0 dark:opacity-0 dark:hover:opacity-100 !duration-300" alt="Skoh logo" />
+        <Image src={logo_pic} className="rounded-full absolute top-0 left-0 opacity-0 opacity-100 hover:opacity-0 dark:opacity-0 dark:hover:opacity-100 !duration-300" alt="My picture" />
       </div>
       <div className="flex justify-center">
         <SocialLink svg={GithubSVG} url="https://github.com/SkohTV" />
@@ -36,7 +36,7 @@ export default async function Home() {
       </div>
       <p className="text-center my-12 mx-2">
         I&apos;m a 21yo French student in my 4th year of Computer Science, in love with Low-level programming and Open-source.<br />
-        In my free time, I work on personal <InnerLink url="/projects" text="coding projects" />, contribute to <InnerLink url="https://github.com/SkohTV?tab=repositories&type=fork" text="Open-source" /> and create videos for my <InnerLink url="https://www.youtube.com/@skoh" text="YouTube channel" />.
+        In my free time, I work on personal <InnerLink outgoing={false} url="/projects" text="coding projects" />, contribute to <InnerLink url="https://github.com/SkohTV?tab=repositories&type=fork" text="Open-source" /> and create videos for my <InnerLink url="https://www.youtube.com/@skoh" text="YouTube channel" />.
       </p>
       <p className="text-center mb-2">
         🌎 <InnerLink url={`https://www.openstreetmap.org/search?query=${encodeURIComponent(location)}`} text={location} />
@@ -50,6 +50,7 @@ export default async function Home() {
 function SocialLink({ svg, url }) {
   return (
     <Link
+      target="_blank"
       href={url}
       className="dark:fill-white fill-black opacity-70 hover:opacity-100 m-2"
       aria-label="Socials link"
@@ -60,8 +61,9 @@ function SocialLink({ svg, url }) {
 }
 
 
-function InnerLink({ text, url }) {
+function InnerLink({ text, url, outgoing = true }) {
   return <Link
+    target={outgoing ? "_blank" : "_self"}
     href={url}
     className="dark:hover:text-violet-400 hover:text-violet-500 font-bold"
   >

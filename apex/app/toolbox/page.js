@@ -3,14 +3,17 @@ import Link from "next/link";
 
 export const metadata = {
   title: 'Toolbox',
-  description: 'Wip',
+  description: 'Languages and tools I\'m experienced with',
 }
 
 
 export default function Toolbox() {
   return (
     <div className="px-4">
-      <h1 className="text-2xl text-center font-bold py-8">Toolbox</h1>
+      <div className="py-8">
+        <h1 className="text-2xl text-center font-bold">Toolbox</h1>
+        <p className="text-center italic">Languages and tools I&apos;m experienced with</p>
+      </div>
 
       <h2 className="text-xl">Langages</h2>
       <Box>
@@ -61,7 +64,7 @@ function Tool({ img, url, name, msg }) {
     ">
         <img src={`https://skillicons.dev/icons?i=${img}`} className="h-full" alt={msg} />
         <div className="m-2 text-start">
-          <Link href={url} className="font-bold dark:hover:text-violet-400 hover:text-violet-500">{name}</Link>
+          <Link target="_blank" href={url} className="font-bold dark:hover:text-violet-400 hover:text-violet-500">{name}</Link>
           <p className="text-nowrap">{msg}</p>
         </div>
     </div>

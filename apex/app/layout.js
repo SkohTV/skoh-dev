@@ -13,7 +13,7 @@ export default function RootLayout({ children }) {
       <head>
         <script src="/theme.js" blocking="render" />
       </head>
-      <body className="dark:bg-zinc-900 bg-zinc-300 dark:text-white text-black flex flex-col h-screen text-sm">
+      <body className="dark:bg-zinc-900 bg-white dark:text-white text-zinc-700 flex flex-col h-screen text-sm">
         <Header />
         <div className="p-5 flex-grow">{children}</div>
         <Footer />

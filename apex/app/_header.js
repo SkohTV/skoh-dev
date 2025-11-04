@@ -10,7 +10,7 @@ export default function Header() {
   return (
     <header className="font-bold flex sm:justify-between justify-between items-center border-b dark:border-zinc-700/75 border-zinc-400/75 border-solid">
       <div className="flex space-x-4 p-5">
-        <Link href="/" className="dark:hover:bg-violet-600 hover:bg-violet-500 px-1 stroke-white text-xl">Skøh</Link>
+        <Link href="/" className="dark:hover:bg-violet-600 hover:bg-violet-400 px-1 stroke-white text-xl">Skøh</Link>
       </div>
       <div className="sm:absolute left-1/2 sm:transform-[translateX(-50%)] flex transform-none">
         <div className="flex space-x-4 p-5">
@@ -31,7 +31,7 @@ function HeaderLink({ name, icon, url }) {
   return (
     <Link
       href={url}
-      className="dark:hover:bg-violet-600 hover:bg-violet-500 px-1 dark:stroke-white stroke-black"
+      className="dark:hover:bg-violet-600 hover:bg-violet-400 px-1 dark:stroke-white stroke-black"
     >
       <span className="block sm:hidden">{icon}</span>
       <span className="hidden sm:block">{name}</span>
@@ -60,7 +60,7 @@ const ThemeToggle = () => {
   return (
   <div className="p-4 dark:stroke-white stroke-black">
     <button onClick={() => setDarkTheme(!darkTheme)}>
-      <div className="cursor-pointer p-1.5 dark:bg-zinc-800 bg-zinc-300 rounded-full border dark:border-zinc-700 border-zinc-400">
+      <div className="cursor-pointer p-1.5 dark:bg-zinc-800 bg-zinc-100 rounded-full border dark:border-zinc-700 border-zinc-300">
         {darkTheme ? <MoonSVG size={24} /> : <SunSVG size={24} /> }
       </div>
     </button>

@@ -18,6 +18,7 @@ export default function Footer() {
 function FooterLink({ svg, url }) {
   return (
     <Link
+      target="_blank"
       href={url}
       className="dark:fill-white fill-black opacity-70 hover:opacity-100 m-2"
       aria-label="Socials link"
