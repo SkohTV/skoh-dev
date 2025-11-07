@@ -41,7 +41,7 @@ function HeaderLink({ name, icon, url }) {
     <Link
       href={url}
       className={
-        (pathname === url ? 'dark:bg-violet-600 bg-violet-400' : '') + ' dark:hover:bg-violet-600 hover:bg-violet-400 px-1 pt-1 dark:stroke-white stroke-black rounded-xs'
+        (pathname === url ? 'dark:bg-violet-600 bg-violet-400' : '') + ' dark:hover:bg-violet-600 hover:bg-violet-400 px-1 pt-1 pb-1 sm:pb-0 dark:stroke-white stroke-black rounded-xs'
       }
     >
       <span className="block sm:hidden">{icon}</span>
