@@ -24,14 +24,14 @@ export default function About() {
         </div>
         <h2 className="text-xl">Who am I</h2>
         <p>
-          My name is <u>Noé</u>, but I'm also known as <u>Skoh</u> on some socials.<br />
-          I'm a French computer science student at <InnerLink text="ISEN" url="https://www.isen.fr/" /> (<i>an engineering school</i>), going into my 4th year.<br />
-          However, I'm not currently in France but in Canada, pursuing a double diploma at <InnerLink text="UQAC" url="https://www.uqac.ca/" /> (<i>master of computer science</i>).<br />
+          My name is <u>Noé</u>, but I&apos;m also known as <u>Skoh</u> on some socials.<br />
+          I&apos;m a French computer science student at <InnerLink text="ISEN" url="https://www.isen.fr/" /> (<i>an engineering school</i>), going into my 4th year.<br />
+          However, I&apos;m not currently in France but in Canada, pursuing a double diploma at <InnerLink text="UQAC" url="https://www.uqac.ca/" /> (<i>master of computer science</i>).<br />
           <br />
-          I've been loving my programming journey so far. I've tried plenty of languages (<i>Python and Rust being my favourites</i>),
+          I&apos;ve been loving my programming journey so far. I&apos;ve tried plenty of languages (<i>Python and Rust being my favourites</i>),
           dabbled in a lot of fields and interacted with a bunch of communities.<br />
           <br />
-          Most recently I've started to get into Open-source, a great way for me to challenge myself,
+          Most recently I&apos;ve started to get into Open-source, a great way for me to challenge myself,
           learn more and help contribute to projects used by lots of people every day!
         </p>
       </div>
