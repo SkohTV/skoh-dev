@@ -33,7 +33,7 @@ export default function About() {
         <h3 className="font-bold pt-3"><InnerLink text="Content creation" url="https://www.youtube.com/@skoh" /></h3>
         <p>
           Small gaming Youtuber and Streamer, aspiring to share my love of video games with the world.<br />
-          One day, I'll be famous on french Youtube
+          One day, I&apos;ll be famous on french Youtube
         </p>
         <h3 className="font-bold pt-3"><InnerLink text="Coding" url="https://github.com/SkohTV" /></h3>
         <p>
