@@ -25,12 +25,21 @@ export default function About() {
 
       <div className="py-4"> 
         <h2 className="text-xl">Passions</h2>
-        <h3 className="font-bold pt-3"><InnerLink text="Coding" url="https://github.com/SkohTV" /></h3>
-        <p>Blabla</p>
         <h3 className="font-bold pt-3"><InnerLink text="Gaming" url="https://steamcommunity.com/id/SkohTV/" /></h3>
-        <p>Blabla</p>
+        <p>
+          Ex-competitive Overwatch and Fortnite tryhard<br />
+          Currently discovering indie games and hidden gems on Steam, with my Steamdeck
+        </p>
         <h3 className="font-bold pt-3"><InnerLink text="Content creation" url="https://www.youtube.com/@skoh" /></h3>
-        <p>Blabla</p>
+        <p>
+          Small gaming Youtuber and Streamer, inspiring to share my love of video games with the world.<br />
+          One day, I'll be famous on french Youtube
+        </p>
+        <h3 className="font-bold pt-3"><InnerLink text="Coding" url="https://github.com/SkohTV" /></h3>
+        <p>
+          Low Level developper, DevOps enthusiast and in love with Open-source<br />
+          Always amazed to see how cleverly things are implemented.
+        </p>
       </div>
 
       <div className="pt-4">

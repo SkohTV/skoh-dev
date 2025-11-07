@@ -38,6 +38,11 @@ export default async function Home() {
         I&apos;m a 21yo French student in my 4th year of Computer Science, in love with Low-level programming and Open-source.<br />
         In my free time, I work on personal <InnerLink outgoing={false} url="/projects" text="coding projects" />, contribute to <InnerLink url="https://github.com/SkohTV?tab=repositories&type=fork" text="Open-source" /> and create videos for my <InnerLink url="https://www.youtube.com/@skoh" text="YouTube channel" />.
       </p>
+      <div className="flex justify-center items-center mb-18 flex-col sm:flex-row" >
+        <InnerButton text="More about me" url="/about" />
+        <InnerButton text="Check my projects" url="/projects" />
+        <InnerButton text="Contact me" url="/contact" />
+      </div>
       <p className="text-center mb-2">
         🌎 <InnerLink url={`https://www.openstreetmap.org/search?query=${encodeURIComponent(location)}`} text={location} />
       </p>
@@ -69,4 +74,20 @@ function InnerLink({ text, url, outgoing = true }) {
   >
     {text}
   </Link>
+}
+
+
+function InnerButton({ text, url }) {
+  return (
+    <Link
+      href={url}
+      className="
+        w-fit p-3 m-2 rounded-lg border-2
+        dark:border-zinc-700 dark:bg-zinc-700/50 dark:hover:border-zinc-800 dark:hover:bg-zinc-900/50
+        border-zinc-300 bg-zinc-200/50 hover:border-zinc-400 hover:bg-zinc-300/50
+      "
+    >
+      {text}
+    </Link>
+  )
 }
