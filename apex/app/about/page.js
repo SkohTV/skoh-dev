@@ -19,8 +19,9 @@ export default function About() {
       </div>
 
       <div className="pb-4">
-        <div className="flex justify-center md:float-right">
-          <Image src={logo_pic} className="rounded-lg w-96 md:float-right border-3 dark:border-zinc-800 border-zinc-200 md:ml-24 mb-4" alt="My picture" />
+        <div className="flex flex-col justify-center md:float-right md:ml-24 mb-4 items-center">
+          <Image src={logo_pic} className="rounded-lg w-96 md:float-right border-3 dark:border-zinc-800 border-zinc-200" alt="My picture" />
+          <div className="text-center italic">Take a look at my <InnerLink text="resume" url="/resume.pdf" /></div>
         </div>
         <h2 className="text-xl">Who am I</h2>
         <p>
