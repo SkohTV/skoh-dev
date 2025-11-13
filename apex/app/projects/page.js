@@ -51,10 +51,10 @@ function BigBox({ name, img, text, url, tags = [ ] }) {
       <div className="dark:bg-zinc-800 bg-zinc-200 p-1.5 rounded-md min-w-[68px]">
         <Image alt={name} src={img} width={56} height={56}/>
       </div>
-      <div className="flex flex-col px-4 justify-around py-1 w-full">
-        <div className="flex justify-between">
-          <div className="font-bold">{name}</div>
-          <div className="flex">{tags.map((x) => <Tag key={x} text={x} />)}</div>
+      <div className="flex pl-4 flex-col justify-around py-1 w-full overflow-hidden">
+        <div className="flex justify-between overflow-scroll no-scrollbar">
+          <div className="font-bold min-w-fit pr-4">{name}</div>
+          <div className="flex gap-1">{tags.map((x) => <Tag key={x} text={x} />)}</div>
         </div>
         <div className="line-clamp-2">{text}</div>
       </div>
@@ -66,12 +66,12 @@ function BigBox({ name, img, text, url, tags = [ ] }) {
 function SmallBox({ name, text, url, tags = [ ] }) {
   return (
     <Link target="_blank" href={url} className="flex dark:bg-zinc-800/30 bg-zinc-200/30 p-2 border border-transparent dark:hover:border-zinc-700 hover:border-zinc-400/60 rounded-md">
-      <div className="flex flex-col px-4 justify-center w-full">
-        <div className="pb-1 flex justify-between">
-          <div className="font-bold">{name}</div>
-          <div className="flex">{tags.map((x) => <Tag key={x} text={x} />)}</div>
+      <div className="flex pl-4 flex-col justify-center w-full">
+        <div className="pb-1 flex justify-between overflow-scroll no-scrollbar">
+          <div className="font-bold min-w-fit pr-4">{name}</div>
+          <div className="flex gap-1">{tags.map((x) => <Tag key={x} text={x} />)}</div>
         </div>
-        <div className="">{text}</div>
+        <div>{text}</div>
       </div>
     </Link>
   )
@@ -82,7 +82,7 @@ function Tag({ text }) {
     <div className="
       dark:bg-zinc-900/20 dark:border-zinc-700/60 dark:text-white/20
       bg-zinc-100/20 border-zinc-400/40 text-zinc-900/30
-      mx-1 rounded-full px-2 border
+      rounded-full px-2 border text-nowrap
     ">
       {'#' + text}
     </div>

@@ -8,4 +8,10 @@ body {
   background-position: 0 0;
 }
 
-* { transition-duration: 100ms };
+@utility no-scrollbar {
+  @apply [scrollbar-width:none] [&::-webkit-scrollbar]:hidden;
+}
+
+* {
+  transition-duration: 100ms
+};
