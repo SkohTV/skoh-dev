@@ -80,7 +80,7 @@ function SmallBox({ name, text, url, tags = [ ] }) {
 function Tag({ text }) {
   return (
     <div className="
-      dark:bg-zinc-900/20 dark:border-zinc-700/60 dark:text-white/20
+      dark:bg-zinc-800/20 dark:border-zinc-600/40 dark:text-white/30
       bg-zinc-100/20 border-zinc-400/40 text-zinc-900/30
       rounded-full px-2 border text-nowrap
     ">
