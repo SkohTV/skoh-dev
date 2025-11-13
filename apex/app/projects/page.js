@@ -33,6 +33,7 @@ export default function Projects() {
           <SmallBox name="Remote Desktop" url="https://github.com/SkohTV/remote-desktop/" text="Desktop-in-cloud setup, using AWS & other automations" />
           <SmallBox name="skoh-dev" url="https://github.com/SkohTV/skoh-dev/" text="Personnal website & portfolio (this website)" />
           <SmallBox name="skoh-tv" url="https://github.com/SkohTV/skoh-tv" text="Personnal linktree" />
+          <SmallBox name="gps-graph" url="https://github.com/SkohTV/gps_graph" text="Locally hosted GPS" />
           <SmallBox name="excalidraw-exporter" url="https://github.com/SkohTV/excalidraw-exporter" text="Convert excalidraw files into svg via Github Actions" />
           <SmallBox name="rbuild" url="https://github.com/SkohTV/rbuild" text="Work in progress" />
         </div>
