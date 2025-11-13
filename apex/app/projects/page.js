@@ -47,7 +47,7 @@ export default function Projects() {
 
 function BigBox({ name, img, text, url, tags = [ ] }) {
   return (
-    <Link target="_blank" href={url} className="flex dark:bg-zinc-800/30 bg-zinc-200/30 p-2 my-2 border border-transparent dark:hover:border-zinc-700 hover:border-zinc-400 rounded-md md:w-150">
+    <Link target="_blank" href={url} className="flex dark:bg-zinc-800/30 bg-zinc-200/30 p-2 my-2 border border-transparent dark:hover:border-zinc-700 hover:border-zinc-400/60 rounded-md md:w-150">
       <div className="dark:bg-zinc-800 bg-zinc-200 p-1.5 rounded-md min-w-[68px]">
         <Image alt={name} src={img} width={56} height={56}/>
       </div>
@@ -65,7 +65,7 @@ function BigBox({ name, img, text, url, tags = [ ] }) {
 
 function SmallBox({ name, text, url, tags = [ ] }) {
   return (
-    <Link target="_blank" href={url} className="flex dark:bg-zinc-800/30 bg-zinc-200/30 p-2 border border-transparent dark:hover:border-zinc-700 hover:border-zinc-400 rounded-md">
+    <Link target="_blank" href={url} className="flex dark:bg-zinc-800/30 bg-zinc-200/30 p-2 border border-transparent dark:hover:border-zinc-700 hover:border-zinc-400/60 rounded-md">
       <div className="flex flex-col px-4 justify-center w-full">
         <div className="pb-1 flex justify-between">
           <div className="font-bold">{name}</div>
