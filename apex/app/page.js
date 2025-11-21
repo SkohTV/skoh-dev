@@ -46,7 +46,7 @@ export default async function Home() {
       <p className="text-center mb-2">
         🌎 <InnerLink url={`https://www.openstreetmap.org/search?query=${encodeURIComponent(location)}`} text={location} />
       </p>
-      <p className="text-center">I&apos;m currently studying (<InnerLink url="https://www.isen.fr/" text="ISEN" /> & <InnerLink url="https://www.uqac.ca/" text="UQAC" />) and seeking <InnerLink url="/resume.pdf" text="an apprenticeship" /> <i>(October 2026)</i></p> 
+      <p className="text-center">I&apos;m currently studying (<InnerLink url="https://www.isen.fr/" text="ISEN" /> & <InnerLink url="https://www.uqac.ca/" text="UQAC" />) and seeking <InnerLink url="/resume.pdf" text="an apprenticeship" /></p> 
     </div>
   );
 }
