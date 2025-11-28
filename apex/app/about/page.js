@@ -51,7 +51,7 @@ export default function About() {
         </p>
         <h3 className="font-bold pt-3"><InnerLink text="Coding" url="https://github.com/SkohTV" /></h3>
         <p>
-          Experienced in Low Level coding, DevOps enthusiast and in love with Open-source.<br />
+          Proficient in Low Level coding, DevOps enthusiast and in love with Open-source.<br />
           Always amazed to see how cleverly things are implemented.
         </p>
       </div>
