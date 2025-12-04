@@ -9,7 +9,7 @@ services:
 
   # Open WebUI
   openwebui:
-    image: ghcr.io/open-webui/open-webui:0.6.40
+    image: ghcr.io/open-webui/open-webui:0.6.41
 
     networks:
       - external
