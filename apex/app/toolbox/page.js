@@ -20,7 +20,7 @@ export default function Toolbox() {
         <Tool img="python" url="https://www.python.org" name="Python" msg="My favorite language" />&nbsp;
         <Tool img="rust" url="https://www.rust-lang.org" name="Rust" msg="Also my favorite language" />&nbsp;
         &nbsp;&nbsp;&nbsp;
-        <Tool img="lua" url="https://www.lua.org" name="Lua" msg="Simple and lightweight" />&nbsp;
+        <Tool img="bash" url="https://www.gnu.org/software/bash/" name="Bash" msg="Unix for the win !" />&nbsp;
         <Tool img="js" url="https://developer.mozilla.org/en-US/docs/Web/JavaScript" name="JavaScript" msg="Overkill web scripting" />&nbsp;
         <Tool img="cpp" url="https://www.cplusplus.com" name="C++" msg="Older Rust" />&nbsp;
         <Tool img="c" url="https://www.cprogramming.com" name="C" msg="Older C++" />
@@ -29,7 +29,7 @@ export default function Toolbox() {
       <h2 className="text-xl">Tooling</h2>
       <Box>
         <Tool img="nix" url="https://nixos.org" name="NixOS" msg="My Linux distribution" />&nbsp;
-        <Tool img="bash" url="https://www.gnu.org/software/bash/" name="Bash" msg="My shell" />&nbsp;
+        <Tool img="postgres" url="https://www.postgresql.org" name="PostgreSQL" msg="SQLite isn't bad either" />&nbsp;
         <Tool img="aws" url="https://aws.amazon.com" name="AWS" msg="DevOps's dream (but $$)" />&nbsp;
         <Tool img="docker" url="https://www.docker.com" name="Docker" msg="Deployement made easy" />
       </Box>
