@@ -62,7 +62,8 @@ function Tool({ img, url, name, msg }) {
       dark:hover:border-indigo-600 hover:border-indigo-400 hover:h-18 hover:w-68 hover:p-2
       border-transparent h-[48px] w-[48px]
     ">
-        <img src={`https://skillicons.dev/icons?i=${img}`} className="h-full" alt={msg} />
+        <img src={`https://skillicons.dev/icons?i=${img}&theme=light`} className="border rounded-xl border-zinc-300 h-full dark:hidden" alt={msg} />
+        <img src={`https://skillicons.dev/icons?i=${img}`} className="h-full dark:block hidden" alt={msg} />
         <div className="m-2 text-start">
           <Link target="_blank" href={url} className="font-bold dark:hover:text-violet-400 hover:text-violet-500">{name}</Link>
           <p className="text-nowrap">{msg}</p>
