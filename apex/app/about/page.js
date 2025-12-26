@@ -37,7 +37,7 @@ export default function About() {
       </div>
 
       <div className="py-4"> 
-        <h2 className="text-xl">Passions</h2>
+        <h2 className="text-xl">Hobbies</h2>
         <h3 className="font-bold pt-3"><InnerLink text="Gaming" url="https://steamcommunity.com/id/SkohTV/" /></h3>
         <p>
           Ex- Overwatch/Fortnite player, used to be pretty good.<br />
