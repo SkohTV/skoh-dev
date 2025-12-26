@@ -60,7 +60,7 @@ export default function About() {
         <p className="text-xs italic absolute -translate-x-1/2 -translate-y-1/1">Today</p>
 
         <div className="flex pt-2">
-          <div className="h-[235px] w-px bg-zinc-600/70 rounded-full" />
+          <div className="h-[235px] w-px dark:bg-zinc-600/70 bg-zinc-300/70 rounded-full" />
 
           <div className="w-full sm:w-auto">
             <TimeBox
@@ -109,7 +109,7 @@ function TimeBox({ title, url, subtitle, date, location, active, color, text }) 
 
       <span className={"absolute flex -left-[7px] top-[14px] size-3"}>
         { active ? <span className={"absolute inline-flex h-full w-full animate-ping rounded-full opacity-75 " + color.high}></span> : ''}
-        <span className={"relative inline-flex size-3 rounded-full " + (active ? color.low : "bg-zinc-700")}></span>
+        <span className={"relative inline-flex size-3 rounded-full " + (active ? color.low : "dark:bg-zinc-700 bg-zinc-300")}></span>
       </span>
 
       <div className="flex justify-between">
