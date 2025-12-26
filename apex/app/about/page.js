@@ -2,7 +2,6 @@ import Image from "next/image";
 
 import logo_pic from "@/assets/logo_pic.jpg";
 import Link from "next/link";
-import { UQAC_BOX, ISEN_BOX, MTI_BOX, Line } from "./_timeline";
 
 export const metadata = {
   title: 'About',
@@ -58,29 +57,45 @@ export default function About() {
 
       <div className="pt-4">
         <h2 className="text-xl pb-8 lg:pt-8 lg:text-left text-center">Timeline</h2>
+        <p className="text-xs italic absolute -translate-x-1/2 -translate-y-1/1">Today</p>
 
-        {/* For large screens */}
-        <div className="hidden lg:flex justify-center w-100%" >
-          <div id="left">
-            <UQAC_BOX />
-            <ISEN_BOX />
+        <div className="flex pt-2">
+          <div className="h-[235px] w-px bg-zinc-600/70 rounded-full" />
+
+          <div className="w-full sm:w-auto">
+            <TimeBox
+              title="UQAC"
+              url="https://uqac.ca/"
+              subtitle="Master of Computer Science"
+              date="Sep 2025 - Jun 2026"
+              location="Chicoutimi, Canada"
+              active={true}
+              color={{ high: "bg-green-500", low: "bg-green-400" }}
+              text="One year abroad studying CS, for a double diploma"
+            />
+            <TimeBox
+              title="MTI France"
+              url="https://fr.mti.com/"
+              subtitle="Cloud Engineering Intern"
+              date="Aug 2024"
+              location="Paris, France"
+              active={false}
+              color={{ }}
+              text="Writing Powershell scripts to interact with on-site servers and VMs"
+            />
+            <TimeBox
+              title="ISEN"
+              url="https://www.isen.fr/"
+              subtitle="Engineering degree"
+              date="Sep 2022 - Nov 2027"
+              location="Caen, France"
+              active={true}
+              color={{ high: "bg-red-500", low: "bg-red-400" }}
+              text="Becoming an engineer with a specialization in Software Engineering"
+            />
           </div>
 
-          <Line />
-
-          <div id="right" className="translate pt-38">
-            <MTI_BOX />
-          </div>
         </div>
-
-
-        {/* For small screens */}
-        <div className="flex flex-col lg:hidden">
-          <UQAC_BOX />
-          <MTI_BOX />
-          <ISEN_BOX />
-        </div>
-        
 
       </div>
 
@@ -88,6 +103,27 @@ export default function About() {
   );
 }
 
+function TimeBox({ title, url, subtitle, date, location, active, color, text }) {
+  return (
+    <div className="relative py-3 px-4">
+
+      <span className={"absolute flex -left-[7px] top-[14px] size-3"}>
+        { active ? <span className={"absolute inline-flex h-full w-full animate-ping rounded-full opacity-75 " + color.high}></span> : ''}
+        <span className={"relative inline-flex size-3 rounded-full " + (active ? color.low : "bg-zinc-700")}></span>
+      </span>
+
+      <div className="flex justify-between">
+        <InnerLink text={title} url={url} />
+        <p className="text-xs">{date}</p>
+      </div>
+      <div className="flex justify-between pb-1">
+        <p className="italic">{subtitle}</p>
+        <p className="text-xs hidden sm:block">{location}</p>
+      </div>
+      <p>{text}</p>
+    </div>
+  );
+}
 
 
 function InnerLink({ text, url }) {
