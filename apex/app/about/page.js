@@ -69,7 +69,6 @@ export default function About() {
               subtitle="Master of Computer Science"
               date="Sep 2025 - Jun 2026"
               location="Chicoutimi, Canada"
-              active={true}
               color={{ high: "bg-green-500", low: "bg-green-400" }}
               text="One year abroad studying CS, for a double diploma"
             />
@@ -79,8 +78,7 @@ export default function About() {
               subtitle="Cloud Engineering Intern"
               date="Aug 2024"
               location="Paris, France"
-              active={false}
-              color={{ }}
+              color={{ high: "bg-yellow-400", low: "bg-yellow-300" }}
               text="Writing Powershell scripts to interact with on-site servers and VMs"
             />
             <TimeBox
@@ -89,7 +87,6 @@ export default function About() {
               subtitle="Engineering degree"
               date="Sep 2022 - Nov 2027"
               location="Caen, France"
-              active={true}
               color={{ high: "bg-red-500", low: "bg-red-400" }}
               text="Becoming an engineer with a specialization in Software Engineering"
             />
@@ -103,13 +100,13 @@ export default function About() {
   );
 }
 
-function TimeBox({ title, url, subtitle, date, location, active, color, text }) {
+function TimeBox({ title, url, subtitle, date, location, color, text }) {
   return (
     <div className="relative py-3 px-4">
 
       <span className={"absolute flex -left-[7px] top-[14px] size-3"}>
-        { active ? <span className={"absolute inline-flex h-full w-full animate-ping rounded-full opacity-75 " + color.high}></span> : ''}
-        <span className={"relative inline-flex size-3 rounded-full " + (active ? color.low : "dark:bg-zinc-700 bg-zinc-300")}></span>
+        <span className={"absolute inline-flex h-full w-full animate-ping rounded-full opacity-75 " + color.high}></span>
+        <span className={"relative inline-flex size-3 rounded-full " + color.low}></span>
       </span>
 
       <div className="flex justify-between">
