@@ -1,0 +1,40 @@
+name: Redeploy containers on latest
+
+
+on:
+  # Manual
+  workflow_dispatch:
+
+  schedule:
+    # Every Sunday midnight
+    - cron: '0 0 * * 0'
+
+
+
+jobs:
+
+  deploy:
+    name: redeploy-latest
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: add ssh keys
+        run: |
+          install -m 600 -D /dev/null ~/.ssh/id_rsa
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          ssh-keyscan -H ${{ secrets.SSH_HOST }} > ~/.ssh/known_hosts
+
+      - name: openwebui
+        run: |
+          ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "\
+          cd ${{ secrets.WORKDIR }} &&\
+          docker compose down openwebui && docker compose pull openwebui && docker compose up openwebui -d"
+
+      - name: beszel
+        run: |
+          ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "\
+          cd ${{ secrets.WORKDIR }} &&\
+          docker compose down beszel && docker compose pull beszel && docker compose up beszel -d"
+
+      - name: cleanup
+        run: rm -rf ~/.ssh
