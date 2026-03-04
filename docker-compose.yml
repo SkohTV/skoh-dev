@@ -9,18 +9,16 @@ services:
 
   # Open WebUI
   openwebui:
-    image: ghcr.io/open-webui/open-webui:0.8.1
+    image: ghcr.io/open-webui/open-webui:latest
 
     networks:
       - external
     volumes:
       - open-webui:/app/backend/data
-    # environment:
-    #   WEBUI_AUTH: False
 
   # Beszel
   beszel:
-    image: henrygd/beszel:0.18.2
+    image: henrygd/beszel:latest
     container_name: beszel
     restart: unless-stopped
 
