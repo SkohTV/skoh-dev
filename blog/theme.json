@@ -1,0 +1,126 @@
+{
+	"colors": {
+		"editor.foreground": "#d4be98ff",
+		"editor.background": "#00000000"
+	},
+	"displayName": "Gruvbox Material",
+	"name": "gruvbox-material",
+	"semanticHighlighting": false,
+	"tokenColors": [
+		{
+			"scope": [
+				"entity.name.class.lua",
+				"entity.other.attribute.lua",
+				"keyword.operator.redirect.target",
+				"string.unquoted.argument.shell",
+				"constant.other.option",
+				"keyword.operator.access.dot",
+				"punctuation.semi"
+			],
+			"settings": {
+				"fontStyle": "normal",
+				"foreground": "#d4be98"
+			}
+		},
+		{
+			"scope": [
+				"punctuation.definition.comment",
+				"comment.line",
+				"comment.block",
+				"constant.character.escape"
+			],
+			"settings": {
+				"fontStyle": "normal",
+				"foreground": "#928374"
+			}
+		},
+		{
+			"scope": [
+				"keyword.control",
+				"keyword.local",
+				"keyword.global",
+				"keyword.other",
+				"storage.type.attribute",
+				"storage.type"
+			],
+			"settings": {
+				"foreground": "#ea6962"
+			}
+		},
+		{
+			"scope": [
+				"keyword.operator",
+				"keyword.operator.pipe",
+				"keyword.control.nushell",
+				"punctuation.separator.key-value"
+			],
+			"settings": {
+				"fontStyle": "bold",
+				"foreground": "#e49641"
+			}
+		},
+		{
+			"scope": [
+				"entity.name.function",
+				"support.function"
+			],
+			"settings": {
+				"foreground": "#a9b665"
+			}
+		},
+		{
+			"scope": [
+				"constant.language",
+				"constant.numeric",
+				"keyword.operator.glob"
+			],
+			"settings": {
+				"foreground": "#e491b2"
+			}
+		},
+		{
+			"scope": [
+				"entity.name.class",
+				"variable.language.self",
+				"entity.name.type",
+				"entity.name.section.group-title"
+			],
+			"settings": {
+				"foreground": "#7daea3"
+			}
+		},
+		{
+			"scope": [
+				"entity.name.tag",
+				"string"
+			],
+			"settings": {
+				"foreground": "#d3ad5c"
+			}
+		},
+		{
+			"scope": [
+				"constant.language",
+				"punctuation.definition.variable",
+				"constant.other.caps",
+				"meta.attribute"
+			],
+			"settings": {
+				"foreground": "#b58cc6"
+			}
+		},
+		{
+			"scope": [
+				"entity.other.attribute",
+				"keyword.other.definition.ini",
+				"meta.use.rust",
+				"entity.name.module",
+				"entity.name.function.macro"
+			],
+			"settings": {
+				"foreground": "#78bf84"
+			}
+		}
+	],
+	"type": "dark"
+}

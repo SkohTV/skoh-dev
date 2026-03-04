@@ -1,0 +1,15 @@
+author = "Skoh"
+title = "Skoh's blog"
+base_url = "https://blog.skoh.dev"
+
+hard_link_static = true
+taxonomies = [{name = "tags", render = false}]
+
+[markdown]
+external_links_target_blank = true
+
+# Stolen from Axlefublr on Github
+[markdown.highlighting]
+theme = 'gruvbox-material'
+style = 'inline'
+extra_themes = ['theme.json']

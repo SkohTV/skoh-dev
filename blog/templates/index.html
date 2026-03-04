@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<h1 class="title">
+  {{ section.title }}
+</h1>
+<ul class="flex flex-col justify-center">
+
+  {% for page in section.pages %}
+  <li class="p-4 text-center">
+
+    <a class="text-2xl font-bold hover:bg-purple-400/75 py-[2px] px-[4px] m-[2px] rounded-xs" href="{{ page.permalink | safe }}">{{ page.title }}</a>
+
+    <ul class="flex justify-center">
+    {% for tag in page.taxonomies.tags %}
+      <li class="
+        tag-{{ tag }} font-semibold after:text-amber-100
+        after:content-[','] last:after:content-[''] after:font-normal
+        pr-1 last:pr-0
+        text-sm
+      ">{{ tag }}</li>
+    {% endfor %}
+    </ul>
+
+    <div class="italic text-sm">{{ page.date }}</div>
+
+  </li>
+  {% endfor %}
+
+</ul>
+{% endblock content %}

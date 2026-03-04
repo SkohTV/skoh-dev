@@ -1,0 +1,67 @@
+.tag-portfolio, .tag-crypto {
+  color: oklch(85.5% 0.138 181.071);
+}
+
+.tag-rust, .tag-nix, .tag-opensource, .tag-python, .tag-git {
+  color: oklch(89.7% 0.196 126.665);
+}
+
+.tag-youtube {
+  color: oklch(70.4% 0.191 22.216);
+}
+
+
+* { transition-duration: 100ms }
+
+body {
+  background-color: #292828;
+  font-family: system-ui;
+}
+
+
+.blog { 
+  p { margin: 12px 0 }
+  a {
+    color: oklch(71.4% 0.203 305.504);
+    text-decoration: underline;
+    &:hover { color: oklch(82.7% 0.119 306.383) }
+  }
+
+  h1 {
+    font-weight: bold;
+    font-size: 1.7rem;
+    padding: 12px 0;
+  }
+  h2 {
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+}
+
+
+.giallo {
+  background-color: #1f1e1e !important;
+  border-radius: 5px;
+  padding: 3px 6px 3px 6px;
+
+  code {
+    display: block; 
+    overflow-x: auto; 
+
+    &::-webkit-scrollbar { height: 4px }
+    &::-webkit-scrollbar-thumb:hover { background: #343434 }
+    &::-webkit-scrollbar-thumb {
+      background: #4f4f4f; 
+      border-radius: 4px;
+    }
+
+  }
+}
+
+
+code {
+  background-color: #1f1e1e !important;
+  font-family: "Monaspace Krypton";
+  padding: 4px;
+  border-radius: 5px;
+}

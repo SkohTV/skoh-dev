@@ -7,6 +7,13 @@ services:
     networks:
         - internal
 
+  # Blog
+  blog:
+    build:
+      context: ./blog
+    networks:
+        - internal
+
   # Open WebUI
   openwebui:
     image: ghcr.io/open-webui/open-webui:latest
@@ -40,6 +47,7 @@ services:
 
     depends_on:
       - apex
+      - blog
       - openwebui
       - beszel
       - homepage

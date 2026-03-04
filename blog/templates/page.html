@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="py-4">
+  <h1 class="text-4xl font-bold text-center">
+    {{ page.title }}
+  </h1>
+
+  <ul class="flex justify-center">
+  {% for tag in page.taxonomies.tags %}
+    <li class="
+      tag-{{ tag }} font-semibold after:text-amber-100
+      after:content-[','] last:after:content-[''] after:font-normal
+      pr-1 last:pr-0
+      text-sm
+    ">{{ tag }}</li>
+  {% endfor %}
+  </ul>
+
+  <div class="italic text-sm text-center">{{ page.date }}</div>
+</div>
+
+<div class="blog flex justify-center">
+  <div class="md:w-4/6 md:p-0 w-full p-4">
+    {{ page.content | safe }}
+  <div>
+</div>
+{% endblock content %}
