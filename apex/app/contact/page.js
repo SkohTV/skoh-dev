@@ -17,8 +17,8 @@ export default function Contact() {
         <p>Mail, at <PLink url="mailto:contact@skoh.dev">contact@skoh.dev</PLink></p>
       </div>
       <div>
-        <p>Download my <PLink url="/resume.pdf">resume</PLink></p>
-        <p>More links at <PLink url='https://skoh.tv'>https://skoh.tv</PLink></p>
+        <p>Check out my <PLink url="https://blog.skoh.dev">blog</PLink></p>
+        <p>More links on <PLink url='https://skoh.tv'>skoh.tv</PLink></p>
       </div>
     </div>
   );
