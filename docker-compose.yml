@@ -12,7 +12,9 @@ services:
     build:
       context: ./blog
     networks:
-        - internal
+      - internal
+    ports:
+      - 8000:80
 
   # Open WebUI
   openwebui:
