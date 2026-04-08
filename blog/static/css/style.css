@@ -1,3 +1,7 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
 .tag-portfolio, .tag-crypto {
   color: oklch(85.5% 0.138 181.071);
 }
