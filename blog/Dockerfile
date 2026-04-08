@@ -1,9 +1,10 @@
-FROM d3fk/tailwindcss:v3 as tailwind
+FROM oven/bun:latest AS tailwind
 
 COPY . /project
 WORKDIR /project
 
-RUN ["tailwindcss", "-i", "static/css/style.css", "-o", "static/css/tailwind.css"]
+RUN ["bun", "install", "tailwindcss", "@tailwindcss/cli"]
+RUN ["bunx", "@tailwindcss/cli", "-i", "./static/css/style.css", "-o", "./static/css/tailwind.css"]
 
 
 FROM ghcr.io/getzola/zola:v0.22.1 as zola
