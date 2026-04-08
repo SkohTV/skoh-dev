@@ -1,4 +1,4 @@
-FROM d3fk/tailwindcss:v4.0.9 as tailwind
+FROM d3fk/tailwindcss:v3 as tailwind
 
 COPY . /project
 WORKDIR /project
