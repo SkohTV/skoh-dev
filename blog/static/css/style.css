@@ -2,6 +2,16 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+body {
+  --bg-dark: #292828;
+  --bg-light: #000;
+};
+
+* { transition-duration: 100ms }
+
+
+
+
 .tag-portfolio, .tag-crypto {
   color: oklch(85.5% 0.138 181.071);
 }
@@ -15,10 +25,9 @@
 }
 
 
-* { transition-duration: 100ms }
+
 
 body {
-  background-color: #292828;
   font-family: system-ui;
 }
 
@@ -41,6 +50,7 @@ body {
     font-size: 1.2rem;
   }
 }
+
 
 
 .giallo {

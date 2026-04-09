@@ -1,22 +1,17 @@
-let theme = localStorage.getItem('theme')
-
-if (theme === null && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+if (localStorage.getItem('theme') === null && window.matchMedia('(prefers-color-scheme: dark)').matches) {
   localStorage.setItem('theme', 'dark')
-  theme = 'dark'
 }
 
-if (theme === 'dark') {
+if (localStorage.getItem('theme') === 'dark') {
   document.querySelector('html').classList.add('dark')
 }
 
 function toggleDark() {
-    if (theme == 'light') {
-      document.documentElement.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
-      theme = 'dark'
-    } else {
+    if (localStorage.getItem('theme') === 'dark') {
       document.documentElement.classList.remove('dark');
       localStorage.setItem('theme', 'light');
-      theme = 'light'
+    } else {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
     }
 }
