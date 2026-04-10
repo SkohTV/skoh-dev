@@ -13,11 +13,9 @@
   <link rel="stylesheet" href="{{ get_url(path='css/style.css', trailing_slash=false) | safe }}" />
   <link rel="stylesheet" href="{{ get_url(path='css/tailwind.css', trailing_slash=false) | safe }}" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/monaspace-krypton@5.2.5/index.min.css">
-
-  <script src="{{ get_url(path='js/theme.js', trailing_slash=false) | safe }}"></script>
 </head>
 
-<body class="dark:bg-(--bg-dark) flex flex-col text-lg/7 text-amber-100/70 h-screen">
+<body class="bg-(--bg-dark) text-amber-100/70 flex flex-col text-lg/7 h-screen">
   {% include "bar.html" %}
   <div class="flex-grow">
     <div>

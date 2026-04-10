@@ -1,10 +1,7 @@
 @import "tailwindcss";
 
-@custom-variant dark (&:where(.dark, .dark *));
-
 body {
   --bg-dark: #292828;
-  --bg-light: #000;
 };
 
 * { transition-duration: 100ms }
