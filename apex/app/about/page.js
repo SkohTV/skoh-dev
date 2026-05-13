@@ -75,7 +75,7 @@ export default function About() {
             <TimeBox
               title="MTI France"
               url="https://fr.mti.com/"
-              subtitle="Cloud Engineering Intern"
+              subtitle="Virtualization Engineer Intern"
               date="Aug 2024"
               location="Paris, France"
               color={{ high: "bg-yellow-400", low: "bg-yellow-300" }}
@@ -85,7 +85,7 @@ export default function About() {
               title="ISEN"
               url="https://www.isen.fr/"
               subtitle="Engineering degree"
-              date="Sep 2022 - Nov 2027"
+              date="Sep 2022 - Sep 2027"
               location="Caen, France"
               color={{ high: "bg-red-500", low: "bg-red-400" }}
               text="Becoming an engineer with a specialization in Software Engineering"
