@@ -46,7 +46,6 @@ services:
       - blog
       - openwebui
       - beszel
-      - vouch
 
     ports:
       - 443:443
