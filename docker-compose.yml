@@ -42,6 +42,7 @@ services:
     networks:
       - internal
       - external
+      - odysseus_default
 
     volumes:
       - ./nginx/conf.d/:/etc/nginx/conf.d/:ro
@@ -51,14 +52,13 @@ services:
       - /etc/letsencrypt/live/skoh.dev/fullchain.pem:/etc/ssl/skoh-dev/fullchain.pem:ro
       - /etc/letsencrypt/live/skoh.dev/privkey.pem:/etc/ssl/skoh-dev/privkey.pem:ro
 
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
-
 
 
 networks:
   internal:
     internal: true
+  odysseus_default:
+    external: true
   external:
 
 volumes:
