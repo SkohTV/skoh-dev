@@ -16,15 +16,6 @@ services:
     ports:
       - 8000:80
 
-  # Open WebUI
-  openwebui:
-    image: ghcr.io/open-webui/open-webui:latest
-
-    networks:
-      - external
-    volumes:
-      - open-webui:/app/backend/data
-
   # Beszel
   beszel:
     image: henrygd/beszel:latest
@@ -44,7 +35,6 @@ services:
     depends_on:
       - apex
       - blog
-      - openwebui
       - beszel
 
     ports:
@@ -60,6 +50,10 @@ services:
 
       - /etc/letsencrypt/live/skoh.dev/fullchain.pem:/etc/ssl/skoh-dev/fullchain.pem:ro
       - /etc/letsencrypt/live/skoh.dev/privkey.pem:/etc/ssl/skoh-dev/privkey.pem:ro
+
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
 
 
 networks:
