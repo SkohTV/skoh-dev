@@ -35,7 +35,7 @@ export default async function Home() {
         <SocialLink svg={DiscordSVG} url="https://discord.com/users/373055398464323584" />
       </div>
       <p className="text-center my-12 mx-2">
-        I&apos;m a 21yo French student in my 4th year of Computer Science, in love with Low-level programming and Open-source.<br />
+        I&apos;m a 22yo French student in my 5th and last year of Computer Science, in love with Low-level programming and Open-source.<br />
         In my free time, I work on personal <InnerLink outgoing={false} url="/projects" text="coding projects" />, contribute to <InnerLink url="https://github.com/SkohTV?tab=repositories&type=fork" text="Open-source" /> and create videos for my <InnerLink url="https://www.youtube.com/@skoh" text="YouTube channel" />.
       </p>
       <div className="flex justify-center items-center mb-18 flex-col sm:flex-row" >
