@@ -16,17 +16,6 @@ services:
     ports:
       - 8000:80
 
-  # Beszel
-  beszel:
-    image: henrygd/beszel:latest
-    container_name: beszel
-    restart: unless-stopped
-
-    networks:
-      - external
-    volumes:
-      - beszel_data:/beszel_data
-
 
   # NGinx reverse proxy
   nginx:
@@ -42,7 +31,6 @@ services:
     networks:
       - internal
       - external
-      - odysseus_default
 
     volumes:
       - ./nginx/conf.d/:/etc/nginx/conf.d/:ro
@@ -57,10 +45,4 @@ services:
 networks:
   internal:
     internal: true
-  odysseus_default:
-    external: true
   external:
-
-volumes:
-  beszel_data:
-  open-webui:
