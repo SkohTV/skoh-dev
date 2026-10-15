@@ -24,7 +24,6 @@ services:
     depends_on:
       - apex
       - blog
-      - beszel
 
     ports:
       - 443:443
