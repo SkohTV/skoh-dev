@@ -18,11 +18,13 @@ services:
 
   # LLM
   open-webui:
-    image: ghcr.io/open-webui/open-webui:main
+    image: ghcr.io/open-webui/open-webui:0.12.3
     ports:
       - 3000:8080
     volumes:
       - open-webui:/app/backend/data
+    networks:
+      - external
 
 
   # NGinx reverse proxy
