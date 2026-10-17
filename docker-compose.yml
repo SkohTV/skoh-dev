@@ -56,4 +56,4 @@ networks:
   external:
 
 volumes:
-    - open-webui
+  open-webui:
