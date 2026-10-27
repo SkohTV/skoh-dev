@@ -25,8 +25,8 @@ export default function About() {
         <h2 className="text-xl">Who am I</h2>
         <p>
           My name is <u>Noé</u>, but I&apos;m also known as <u>Skoh</u> on some socials.<br />
-          I&apos;m a French computer science student at <InnerLink text="ISEN" url="https://www.isen.fr/" /> (<i>an engineering school</i>), going into my 4th year.<br />
-          However, I&apos;m not currently in France but in Canada, pursuing a double diploma at <InnerLink text="UQAC" url="https://www.uqac.ca/" /> (<i>master of computer science</i>).<br />
+          I&apos;m a French computer science student at <InnerLink text="ISEN" url="https://www.isen.fr/" /> (<i>an engineering school</i>), going into my 5th and last year.<br />
+          I&apos;m also in an apprenticeship at <InnerLink text="ETAP" url="https://etap.com/" /> where I maintain, refactor and add features to a C++/C# monolithic codebase.
           <br />
           I&apos;ve been loving my programming journey so far. I&apos;ve tried plenty of languages (<i>Python and Rust being my favourites</i>),
           dabbled in a lot of fields and interacted with a bunch of communities.<br />
@@ -41,7 +41,8 @@ export default function About() {
         <h3 className="font-bold pt-3"><InnerLink text="Gaming" url="https://steamcommunity.com/id/SkohTV/" /></h3>
         <p>
           Ex- Overwatch/Fortnite player, used to be pretty good.<br />
-          Currently discovering indie games and hidden gems on Steam, with my Steamdeck.
+          Currently discovering indie games and hidden gems on Steam, with my Steamdeck.<br />
+          Also love to play survival games and coop shooters with my friends.
         </p>
         <h3 className="font-bold pt-3"><InnerLink text="Content creation" url="https://www.youtube.com/@skoh" /></h3>
         <p>
@@ -60,9 +61,18 @@ export default function About() {
         <p className="text-xs italic absolute -translate-x-1/2 -translate-y-1/1">Today</p>
 
         <div className="flex pt-2">
-          <div className="h-[235px] w-px dark:bg-zinc-600/70 bg-zinc-300/70 rounded-full" />
+          <div className="h-[330px] w-px dark:bg-zinc-600/70 bg-zinc-300/70 rounded-full" />
 
           <div className="w-full sm:w-auto">
+            <TimeBox
+              title="ETAP"
+              url="https://etap.com/"
+              subtitle="Software Engineer"
+              date="Oct 2026 - Oct 2027"
+              location="Paris, France"
+              color={{ high: "bg-blue-500", low: "bg-blue-400" }}
+              text="Working on Caneco BIM/IMP (plugins for Revit/AutoCAD)"
+            />
             <TimeBox
               title="UQAC"
               url="https://uqac.ca/"
