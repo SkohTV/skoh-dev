@@ -18,7 +18,7 @@ services:
 
   # LLM
   open-webui:
-    image: ghcr.io/open-webui/open-webui:0.12.3
+    image: ghcr.io/open-webui/open-webui:latest
     ports:
       - 3000:8080
     volumes:
