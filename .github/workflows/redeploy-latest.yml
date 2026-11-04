@@ -30,5 +30,11 @@ jobs:
           cd ${{ secrets.WORKDIR }} &&\
           docker compose down beszel && docker compose pull beszel && docker compose up beszel -d"
 
+      - name: open-webui
+        run: |
+          ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "\
+          cd ${{ secrets.WORKDIR }} &&\
+          docker compose down open-webui && docker compose pull openwebui && docker compose up openwebui -d"
+
       - name: cleanup
         run: rm -rf ~/.ssh
